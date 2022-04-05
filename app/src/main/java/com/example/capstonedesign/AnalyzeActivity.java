@@ -18,7 +18,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class AnalyzeActivity extends AppCompatActivity {
-    ImageButton subtitute_btn, capture_btn;
+    ImageButton subtitute_btn, capture_btn, update;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
