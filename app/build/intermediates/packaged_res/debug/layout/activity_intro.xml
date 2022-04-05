@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+<!--
+    <ImageView
+        android:id="@+id/splash_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/icon_splash"
+        android:translationZ="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/splash_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.454"
+        tools:ignore="MissingConstraints" />
+        -->
+
+    <TextView
+        android:id="@+id/splash_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee"
+        android:inputType="textPersonName"
+        android:text="SEARCH"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:shadowRadius="6.0"
+        android:shadowDx="6.0"
+        android:shadowDy="6.0"
+        android:shadowColor="#44000000"
+        android:textColor="#FFFFFFFF"
+        android:textSize="36dp"
+        android:translationZ="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/splash_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="PILL"
+        android:textAlignment="center"
+        android:textColor="#FFFFFFFF"
+        android:textSize="17dp"
+        android:translationZ="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.667"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/splash_title3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nanumbrushscript"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Accurately and Quickly"
+        android:textColor="#FFFFFFFF"
+        android:textSize="17dp"
+        android:translationZ="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.443"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/splash_title4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/regular"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Copyright 2022. all rights reserved"
+        android:textAlignment="center"
+        android:textColor="#44FFFFFF"
+        android:textSize="10dp"
+        android:translationZ="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/gradientPreloaderView"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_preloader" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
