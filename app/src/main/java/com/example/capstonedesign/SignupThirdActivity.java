@@ -26,7 +26,7 @@ public class SignupThirdActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignupFirstActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginFirstActivity.class);
                 startActivity(intent);
             }
         });
