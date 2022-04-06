@@ -2509,6 +2509,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable camera
+drawable check
 drawable circle
 drawable circle2
 drawable clock
@@ -2768,6 +2769,7 @@ id box8
 id buttonPanel
 id cache_measures
 id callMeasure
+id camera
 id cancel_button
 id capture_btn
 id carryVelocity
@@ -2815,7 +2817,6 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
-id delete
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -2869,6 +2870,7 @@ id frost
 id ghost_view
 id ghost_view_holder
 id glass
+id glide_custom_view_target_tag
 id gone
 id google_login
 id gradientPreloaderView

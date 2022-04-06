@@ -2508,6 +2508,7 @@ int drawable btn_radio_off_to_on_mtrl_animation 0x7f07005f
 int drawable btn_radio_on_mtrl 0x7f070060
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f070061
 int drawable camera 0x7f0700d4
+int drawable check 0x7f0700fe
 int drawable circle 0x7f070062
 int drawable circle2 0x7f0700d6
 int drawable clock 0x7f070063
@@ -2767,6 +2768,7 @@ int id box8 0x7f090211
 int id buttonPanel 0x7f090068
 int id cache_measures 0x7f090069
 int id callMeasure 0x7f09006a
+int id camera 0x7f09023e
 int id cancel_button 0x7f09006b
 int id capture_btn 0x7f090234
 int id carryVelocity 0x7f09006c
@@ -2814,7 +2816,6 @@ int id decelerate 0x7f090093
 int id decelerateAndComplete 0x7f090094
 int id decor_content_parent 0x7f090095
 int id default_activity_button 0x7f090096
-int id delete 0x7f090204
 int id deltaRelative 0x7f090097
 int id dependency_ordering 0x7f090098
 int id design_bottom_sheet 0x7f090099
@@ -2868,6 +2869,7 @@ int id frost 0x7f0900c7
 int id ghost_view 0x7f0900c8
 int id ghost_view_holder 0x7f0900c9
 int id glass 0x7f090221
+int id glide_custom_view_target_tag 0x7f09023d
 int id gone 0x7f0900ca
 int id google_login 0x7f090222
 int id gradientPreloaderView 0x7f0900cb

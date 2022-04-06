@@ -43,6 +43,7 @@ drawable box7
 drawable box8
 drawable box9
 drawable camera
+drawable check
 drawable circle
 drawable circle2
 drawable clock
@@ -117,10 +118,10 @@ id box3
 id box5
 id box7
 id box8
+id camera
 id capture_btn
 id circle
 id circle2
-id delete
 id email_login
 id glass
 id google_login
