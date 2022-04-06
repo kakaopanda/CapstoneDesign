@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-39:12
+ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-40:12
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\kakao\.gradle\caches\transforms-3\386394a50e8a8e86cffa5c9948621de6\transformed\glide-4.10.0\AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\kakao\.gradle\caches\transforms-3\da4496db05b3a0f6f7e00e5722aa8e8d\transformed\firebase-auth-19.0.0\AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\kakao\.gradle\caches\transforms-3\8577e78b2eef2874f55b7ceb2ac3fc10\transformed\play-services-auth-17.0.0\AndroidManifest.xml:17:1-39:12
@@ -59,20 +59,20 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\kakao\.gradle\ca
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\kakao\.gradle\caches\transforms-3\73ceb3afe59ec363fd2600cddc5c90e5\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\kakao\.gradle\caches\transforms-3\96c6b5c1d33ae62b280a57bf07ec3c43\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\kakao\.gradle\caches\transforms-3\79f5a3fa03a16d194c897ec71b55329b\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-40:12
 	package
 		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-39:12
+		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-40:12
 		INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-39:12
+		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-40:12
 		INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:2:11-69
@@ -87,7 +87,7 @@ ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\Andr
 	android:name
 		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:5:22-78
 application
-ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:6:5-38:19
+ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:6:5-39:19
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\kakao\.gradle\caches\transforms-3\386394a50e8a8e86cffa5c9948621de6\transformed\glide-4.10.0\AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\kakao\.gradle\caches\transforms-3\386394a50e8a8e86cffa5c9948621de6\transformed\glide-4.10.0\AndroidManifest.xml:10:5-20
 MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\kakao\.gradle\caches\transforms-3\da4496db05b3a0f6f7e00e5722aa8e8d\transformed\firebase-auth-19.0.0\AndroidManifest.xml:23:5-40:19
@@ -188,22 +188,26 @@ activity#com.example.capstonedesign.SubstituteActivity
 ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:28:9-55
 	android:name
 		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:28:19-53
+activity#com.example.capstonedesign.AnalyzeFailActivity
+ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:29:9-56
+	android:name
+		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:29:19-54
 provider#androidx.core.content.FileProvider
-ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:29:9-37:20
+ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:30:9-38:20
 	android:grantUriPermissions
-		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:32:13-47
+		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:33:13-47
 	android:authorities
-		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:31:13-74
+		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:32:13-74
 	android:exported
-		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:33:13-37
+		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:34:13-37
 	android:name
-		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:30:13-62
+		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:31:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:34:13-36:53
+ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:35:13-37:53
 	android:resource
-		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:36:17-50
+		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:37:17-50
 	android:name
-		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:35:17-67
+		ADDED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml:36:17-67
 uses-sdk
 INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\kakao\AndroidStudioProjects\CapstoneDesign\app\src\main\AndroidManifest.xml

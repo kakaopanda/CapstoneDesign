@@ -2545,6 +2545,7 @@ int drawable feather 0x7f07007d
 int drawable fire 0x7f07007e
 int drawable glass 0x7f0700e7
 int drawable glass_another 0x7f070106
+int drawable glass_fail 0x7f070108
 int drawable google_login 0x7f0700e8
 int drawable googleg_disabled_color_18 0x7f07007f
 int drawable googleg_standard_color_18 0x7f070080
@@ -3044,6 +3045,7 @@ int id progressbar2 0x7f090205
 int id radio 0x7f090159
 int id ratio 0x7f09015a
 int id reanalyze_btn 0x7f090235
+int id reanalyze_btn2 0x7f09024a
 int id rectangles 0x7f09015b
 int id resend_btn 0x7f090249
 int id reverseSawtooth 0x7f09015c
@@ -3171,6 +3173,7 @@ int id textView20 0x7f09021c
 int id textView21 0x7f09021d
 int id textView22 0x7f09021e
 int id textView23 0x7f090227
+int id textView24 0x7f09021f
 int id textView25 0x7f090230
 int id textView26 0x7f090231
 int id textView27 0x7f090232
@@ -3179,6 +3182,7 @@ int id textView29 0x7f090236
 int id textView3 0x7f0901f9
 int id textView30 0x7f090237
 int id textView31 0x7f090238
+int id textView32 0x7f09024b
 int id textView34 0x7f090244
 int id textView35 0x7f090245
 int id textView4 0x7f0901fa

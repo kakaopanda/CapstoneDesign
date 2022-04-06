@@ -2546,6 +2546,7 @@ drawable feather
 drawable fire
 drawable glass
 drawable glass_another
+drawable glass_fail
 drawable google_login
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -3045,6 +3046,7 @@ id progressbar2
 id radio
 id ratio
 id reanalyze_btn
+id reanalyze_btn2
 id rectangles
 id resend_btn
 id reverseSawtooth
@@ -3172,6 +3174,7 @@ id textView20
 id textView21
 id textView22
 id textView23
+id textView24
 id textView25
 id textView26
 id textView27
@@ -3180,6 +3183,7 @@ id textView29
 id textView3
 id textView30
 id textView31
+id textView32
 id textView34
 id textView35
 id textView4
