@@ -10,6 +10,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -28,7 +29,7 @@ import java.util.Date;
 
 public class SubstituteActivity extends AppCompatActivity {
     private static final String CAPTURE_PATH = "/storage/emulated/0/DCIM/Screenshots";
-    ImageButton reanalyze_btn, capture_btn;
+    ImageView reanalyze_btn, capture_btn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

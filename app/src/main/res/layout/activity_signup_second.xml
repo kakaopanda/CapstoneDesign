@@ -7,6 +7,28 @@
     android:background="@color/french_blue"
     >
 
+    <ImageView
+        android:id="@+id/resend_btn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:src="@drawable/resend_btn_another"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.868" />
+
+    <ImageView
+        android:id="@+id/submit_btn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:src="@drawable/submit_btn_another"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,10 +39,10 @@
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111"
+        app:layout_constraintVertical_bias="0.07"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -30,13 +52,12 @@
         android:inputType="textPersonName"
         android:text="입력하신 이메일로 인증 메일이 발송되었습니다."
         android:textColor="#FFFFFFFF"
-        android:textSize="14dp"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251"
+        app:layout_constraintVertical_bias="0.192"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -47,62 +68,101 @@
         android:inputType="textPersonName"
         android:text="4자리 인증번호를 입력해주세요."
         android:textColor="#FFFFFFFF"
-        android:textSize="14dp"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.317"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286"
+        app:layout_constraintVertical_bias="0.224"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/input_box2"
+        android:layout_width="55dp"
+        android:layout_height="100dp"
+        android:src="@drawable/input_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
+
     <TextView
+        android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/light"
+        android:fontFamily="@font/bold"
         android:inputType="textPersonName"
         android:text="인증번호"
         android:textColor="#FFFFFFFF"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456"
+        app:layout_constraintVertical_bias="0.3"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/input_box"
+        android:layout_width="55dp"
+        android:layout_height="100dp"
+        android:src="@drawable/input_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <ImageView
+        android:id="@+id/input_box4"
+        android:layout_width="55dp"
+        android:layout_height="100dp"
+        android:src="@drawable/input_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <ImageView
+        android:id="@+id/input_box3"
+        android:layout_width="55dp"
+        android:layout_height="100dp"
+        android:src="@drawable/input_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
 
     <EditText
         android:id="@+id/sample_EditText"
         android:layout_width="280dp"
-        android:layout_height="60dp"
+        android:layout_height="120dp"
         android:layout_weight="1"
-        android:backgroundTint="#44FFFFFF"
+        android:backgroundTint="@color/french_blue"
         android:ems="10"
         android:fontFamily="@font/regular"
         android:inputType="numberDecimal"
-        android:text=""
-        android:textColor="#FFFFFFFF"
+        android:letterSpacing="0.5"
+        android:maxLength="4"
+        android:text="1234"
+        android:textColor="#000000"
+        android:textCursorDrawable="@color/french_blue"
+        android:textSize="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.714"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.515"
+        app:layout_constraintVertical_bias="0.376"
         tools:ignore="MissingConstraints" />
 
-    <ImageButton
-        android:id="@+id/submit_btn"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:background="@drawable/submit"
-        android:fontFamily="@font/regular"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939"
-        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

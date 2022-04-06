@@ -5,13 +5,14 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SignupSecondActivity extends AppCompatActivity {
-    ImageButton submit_btn;
+    ImageView submit_btn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         applyColors();
@@ -42,8 +43,11 @@ public class SignupSecondActivity extends AppCompatActivity {
         getWindow().setNavigationBarColor(Color.parseColor("#FF1073B4"));
     }
 
+    /*
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
     }
+
+     */
 }

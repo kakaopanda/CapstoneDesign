@@ -57,20 +57,19 @@
         tools:ignore="MissingConstraints" />
 
 
-
     <ImageView
         android:id="@+id/input_box"
-        android:layout_width="250dp"
+        android:layout_width="240dp"
         android:layout_height="45dp"
         android:background="@drawable/box13"
         android:fontFamily="@font/regular"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435"
+        app:layout_constraintVertical_bias="0.434"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -80,14 +79,14 @@
         android:layout_weight="1"
         android:backgroundTint="#44FFFFFF"
         android:ems="10"
-        android:textSize="13dp"
         android:fontFamily="@font/bold"
         android:inputType="textPassword"
-        android:text="sdfs"
+        android:text="password"
         android:textColor="#000000"
+        android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.435"
@@ -103,10 +102,10 @@
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389"
+        app:layout_constraintVertical_bias="0.392"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -119,24 +118,24 @@
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintHorizontal_bias="0.232"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227"
+        app:layout_constraintVertical_bias="0.231"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/input_box1"
-        android:layout_width="250dp"
+        android:layout_width="240dp"
         android:layout_height="45dp"
         android:background="@drawable/box13"
         android:fontFamily="@font/regular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268"
+        app:layout_constraintVertical_bias="0.267"
         tools:ignore="MissingConstraints" />
 
     <EditText

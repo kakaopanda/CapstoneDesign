@@ -7,6 +7,208 @@
     android:background="@color/french_blue"
     >
 
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="264dp"
+        android:background="@drawable/confirm"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/input_box7"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="379dp"
+        android:background="@drawable/confirm"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/input_box6"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="492dp"
+        android:background="@drawable/confirm"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/input_box8"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/input_box8"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:background="@drawable/box13"
+        android:fontFamily="@font/regular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/sample_EditText3"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_weight="1"
+        android:backgroundTint="#44FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/bold"
+        android:inputType="textPassword"
+        android:text="password"
+        android:textColor="#000000"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.701"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:inputType="textPersonName"
+        android:text="비밀번호 확인"
+        android:textColor="#FFFFFFFF"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/input_box6"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:background="@drawable/box13"
+        android:fontFamily="@font/regular"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/sample_EditText8"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_weight="1"
+        android:backgroundTint="#44FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/bold"
+        android:inputType="textPassword"
+        android:text="password"
+        android:textColor="#000000"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:inputType="textPersonName"
+        android:text="비밀번호"
+        android:textColor="#FFFFFFFF"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.489"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:inputType="textPersonName"
+        android:text="이메일"
+        android:textColor="#FFFFFFFF"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.190"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.327"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/input_box7"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:background="@drawable/box13"
+        android:fontFamily="@font/regular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/sample_EditText9"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_weight="1"
+        android:backgroundTint="#44FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/bold"
+        android:inputType="text"
+        android:text="kakao_panda@naver.com"
+        android:textColor="#000000"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/submit_btn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:src="@drawable/submit_btn_another"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,10 +219,10 @@
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.112"
+        app:layout_constraintVertical_bias="0.07"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -30,13 +232,13 @@
         android:inputType="textPersonName"
         android:text="이메일 간편가입이 가능합니다."
         android:textColor="#FFFFFFFF"
-        android:textSize="14dp"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintHorizontal_bias="0.301"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251"
+        app:layout_constraintVertical_bias="0.192"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -45,132 +247,15 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/regular"
         android:inputType="textPersonName"
-        android:text="회원가입을 위해 필수 정보를 입력해주세요."
-        android:textColor="#FFFFFFFF"
-        android:textSize="14dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.309"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/sample_EditText"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_weight="1"
-        android:backgroundTint="#44FFFFFF"
-        android:ems="10"
-        android:fontFamily="@font/regular"
-        android:inputType="text"
-        android:text=""
-        android:textColor="#FFFFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/sample_EditText3"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_weight="1"
-        android:backgroundTint="#44FFFFFF"
-        android:ems="10"
-        android:fontFamily="@font/regular"
-        android:inputType="textPassword"
-        android:text=""
-        android:textColor="#FFFFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/light"
-        android:inputType="textPersonName"
-        android:text="비밀번호 확인"
+        android:text="회원가입을 위한 필수 정보를 입력해주세요."
         android:textColor="#FFFFFFFF"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693"
+        app:layout_constraintVertical_bias="0.225"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/sample_EditText2"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_weight="1"
-        android:backgroundTint="#44FFFFFF"
-        android:ems="10"
-        android:fontFamily="@font/regular"
-        android:inputType="textPassword"
-        android:text=""
-        android:textColor="#FFFFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/light"
-        android:inputType="textPersonName"
-        android:text="비밀번호"
-        android:textColor="#FFFFFFFF"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/light"
-        android:inputType="textPersonName"
-        android:text="이메일"
-        android:textColor="#FFFFFFFF"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.371"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/submit_btn"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:background="@drawable/submit"
-        android:fontFamily="@font/regular"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939"
-        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

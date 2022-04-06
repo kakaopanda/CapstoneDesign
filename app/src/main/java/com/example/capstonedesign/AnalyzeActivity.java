@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -18,7 +19,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class AnalyzeActivity extends AppCompatActivity {
-    ImageButton subtitute_btn, capture_btn, update;
+    ImageView subtitute_btn, capture_btn, update;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
