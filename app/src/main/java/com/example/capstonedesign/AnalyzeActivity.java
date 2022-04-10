@@ -3,11 +3,15 @@ package com.example.capstonedesign;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -19,7 +23,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class AnalyzeActivity extends AppCompatActivity {
-    ImageView subtitute_btn, capture_btn, update;
+    ImageView subtitute_btn, capture_btn, update, medicine_circle, medicine_circle2, medicine_circle3;
+    Animation opacityAnim, scaleAnim, scaleAnim2, scaleAnim3;
+    TextView result_name2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,7 +33,7 @@ public class AnalyzeActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_analyze);
+        setContentView(R.layout.activity_analyze_temp);
 
         subtitute_btn = findViewById(R.id.subtitute_btn);
         subtitute_btn.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +52,18 @@ public class AnalyzeActivity extends AppCompatActivity {
                 ScreenShot();
             }
         });
+
+        medicine_circle = findViewById(R.id.medicine_circle);
+        scaleAnim = AnimationUtils.loadAnimation(this, R.anim.scale);
+        medicine_circle.setAnimation(scaleAnim);
+
+        medicine_circle2 = findViewById(R.id.medicine_circle2);
+        scaleAnim2 = AnimationUtils.loadAnimation(this, R.anim.scale2);
+        medicine_circle2.setAnimation(scaleAnim2);
+
+        result_name2 = findViewById(R.id.result_name2);
+        opacityAnim = AnimationUtils.loadAnimation(this, R.anim.opacity);
+        result_name2.setAnimation(opacityAnim);
     }
 
     public void ScreenShot(){

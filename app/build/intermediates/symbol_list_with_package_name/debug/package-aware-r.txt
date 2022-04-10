@@ -37,7 +37,11 @@ anim fragment_fast_out_extra_slow_in
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim opacity
 anim rotate
+anim scale
+anim scale2
+anim scale3
 anim splash
 anim splash2
 anim splash3
@@ -265,6 +269,10 @@ attr circularflow_defaultAngle
 attr circularflow_defaultRadius
 attr circularflow_radiusInDP
 attr circularflow_viewCenter
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr clearsTag
 attr clickAction
 attr clockFaceBackgroundColor
@@ -2477,6 +2485,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable arrow
 drawable avd_hide_password
 drawable avd_show_password
 drawable box
@@ -2484,6 +2493,8 @@ drawable box10
 drawable box11
 drawable box12
 drawable box13
+drawable box14
+drawable box15
 drawable box2
 drawable box3
 drawable box4
@@ -2512,6 +2523,7 @@ drawable camera
 drawable check
 drawable circle
 drawable circle2
+drawable circle_neon
 drawable clock
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -2547,6 +2559,7 @@ drawable fire
 drawable glass
 drawable glass_another
 drawable glass_fail
+drawable glass_fail2
 drawable google_login
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -2602,6 +2615,9 @@ drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
 drawable medicine
+drawable medicine_background
+drawable medicine_background_edit
+drawable medicine_example
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -2614,6 +2630,7 @@ drawable mtrl_popupmenu_background_overlay
 drawable mtrl_tabs_default_indicator
 drawable naver_login
 drawable navigation_empty_icon
+drawable note
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -2631,8 +2648,10 @@ drawable pill
 drawable pill2
 drawable pill_background
 drawable progress
+drawable progress_circle
 drawable reanalyze_btn
 drawable reanalyze_btn_another
+drawable report
 drawable resend_btn_another
 drawable save_btn
 drawable save_btn_another
@@ -2643,10 +2662,12 @@ drawable star
 drawable submit
 drawable submit_btn
 drawable submit_btn_another
+drawable substitution_example
 drawable subtitute_btn
 drawable subtitute_btn_another
 drawable table
 drawable table2
+drawable table_edit
 drawable test_custom_background
 drawable test_level_drawable
 drawable title_left
@@ -2770,12 +2791,8 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id box
-id box11
 id box2
 id box3
-id box5
-id box7
-id box8
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2800,6 +2817,9 @@ id chronometer
 id circle
 id circle2
 id circle_center
+id circle_iv
+id circle_iv3
+id circle_iv4
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -2908,7 +2928,6 @@ id imageView2
 id imageView3
 id imageView5
 id imageView6
-id imageView7
 id imageView8
 id immediateStop
 id included
@@ -2967,6 +2986,13 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id medicine
+id medicine_background
+id medicine_circle
+id medicine_circle2
+id medicine_circle3
+id medicine_circle4
+id medicine_example
+id medicine_neon
 id message
 id middle
 id mini
@@ -3017,6 +3043,7 @@ id noState
 id none
 id normal
 id north
+id note
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -3047,8 +3074,13 @@ id radio
 id ratio
 id reanalyze_btn
 id reanalyze_btn2
+id reanalyze_btn3
 id rectangles
 id resend_btn
+id result_name
+id result_name2
+id result_name4
+id result_name5
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3162,7 +3194,6 @@ id textView
 id textView10
 id textView11
 id textView12
-id textView13
 id textView14
 id textView15
 id textView16
@@ -3184,8 +3215,13 @@ id textView3
 id textView30
 id textView31
 id textView32
+id textView33
 id textView34
 id textView35
+id textView36
+id textView37
+id textView38
+id textView39
 id textView4
 id textView5
 id textView6
@@ -3329,6 +3365,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_analyze
 layout activity_analyze_fail
+layout activity_analyze_temp
 layout activity_intro
 layout activity_login_first
 layout activity_login_second
@@ -3337,6 +3374,8 @@ layout activity_signup_first
 layout activity_signup_second
 layout activity_signup_third
 layout activity_substitution
+layout activity_substitution_fail
+layout activity_substitution_temp
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -4643,6 +4682,7 @@ styleable Carousel carousel_backwardTransition carousel_emptyViewsBehavior carou
 styleable CheckedTextView android_checkMark checkMarkCompat checkMarkTint checkMarkTintMode
 styleable Chip android_textAppearance android_textSize android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CircularProgressIndicator indicatorDirectionCircular indicatorInset indicatorSize
 styleable ClockFaceView clockFaceBackgroundColor clockNumberTextColor
 styleable ClockHandView clockHandColor materialCircleRadius selectorSize

@@ -1,35 +1,30 @@
 package com.example.capstonedesign;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.FileProvider;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class SubstituteActivity extends AppCompatActivity {
     private static final String CAPTURE_PATH = "/storage/emulated/0/DCIM/Screenshots";
-    ImageView reanalyze_btn, capture_btn;
+    ImageView reanalyze_btn3, capture_btn, update, medicine_circle, medicine_circle3, medicine_circle4;
+    TextView result_name5;
+    Animation opacityAnim, scaleAnim, scaleAnim2, scaleAnim3;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,10 +32,10 @@ public class SubstituteActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_substitution);
+        setContentView(R.layout.activity_substitution_temp);
 
-        reanalyze_btn = findViewById(R.id.reanalyze_btn);
-        reanalyze_btn.setOnClickListener(new View.OnClickListener() {
+        reanalyze_btn3 = findViewById(R.id.reanalyze_btn3);
+        reanalyze_btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -54,6 +49,18 @@ public class SubstituteActivity extends AppCompatActivity {
                 ScreenShot();
             }
         });
+
+        medicine_circle3 = findViewById(R.id.medicine_circle3);
+        scaleAnim = AnimationUtils.loadAnimation(this, R.anim.scale);
+        medicine_circle3.setAnimation(scaleAnim);
+
+        medicine_circle4 = findViewById(R.id.medicine_circle4);
+        scaleAnim2 = AnimationUtils.loadAnimation(this, R.anim.scale2);
+        medicine_circle4.setAnimation(scaleAnim2);
+
+        result_name5 = findViewById(R.id.result_name5);
+        opacityAnim = AnimationUtils.loadAnimation(this, R.anim.opacity);
+        result_name5.setAnimation(opacityAnim);
     }
 
     public void ScreenShot(){
