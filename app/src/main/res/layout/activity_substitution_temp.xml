@@ -7,6 +7,32 @@
     android:background="@color/french_blue"
     >
 
+    <ImageView
+        android:id="@+id/medicine_circle1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/progress_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/medicine_circle2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/progress_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102"
+        tools:ignore="MissingConstraints" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circle_iv4"
         android:layout_width="40dp"
@@ -36,7 +62,7 @@
         android:shadowDy="5.0"
         android:shadowRadius="7.0"
         android:text="수로신디정"
-        android:textColor="#66FFFFFF"
+        android:textColor="#CCFFFFFF"
         android:textSize="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,10 +154,9 @@
         android:src="@drawable/box15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673"
+        app:layout_constraintVertical_bias="0.667"
         tools:ignore="MissingConstraints" />
 
     <TextView

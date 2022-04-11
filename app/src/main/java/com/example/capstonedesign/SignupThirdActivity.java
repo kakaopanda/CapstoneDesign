@@ -45,11 +45,8 @@ public class SignupThirdActivity extends AppCompatActivity {
         getWindow().setNavigationBarColor(Color.parseColor("#FF1073B4"));
     }
 
-    /*
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
     }
-
-     */
 }

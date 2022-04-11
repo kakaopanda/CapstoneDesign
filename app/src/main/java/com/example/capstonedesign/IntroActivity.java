@@ -5,9 +5,13 @@ import android.animation.ObjectAnimator;
 import android.animation.TimeAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -17,10 +21,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
+
 public class IntroActivity extends AppCompatActivity {
     Animation splashAnim,splashAnim2, splashAnim3;
     View gradientPreloaderView;
     TextView splash_title, splash_title2, splash_title3, splash_title4;
+    boolean alarm_status = false;
 
     public static void startAnimation(final int view, final Activity activity) {
         final int start = Color.parseColor("#0099FF");
@@ -79,10 +88,42 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent(getApplicationContext(), LoginFirstActivity.class);
+                startService(new Intent(getApplicationContext(), TerminationService.class));
+                createNotification();
                 startActivity(intent); //인트로 실행 후 바로 MainActivity로 넘어감.
                 finish();
             }
         }, 3000); //1초 후 인트로 실행 기본 설정
+    }
+
+    private void createNotification() {
+        if (!alarm_status) {
+            alarm_status = true;
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default").setOngoing(true);
+
+            builder.setSmallIcon(R.mipmap.ic_launcher);
+            builder.setContentTitle("서치필(Search Pill)");
+            builder.setContentText("현재 애플리케이션이 동작중입니다.");
+            builder.setColor(ContextCompat.getColor(this, R.color.french_blue));
+            // 사용자가 탭을 클릭하면 자동 제거
+            builder.setAutoCancel(true);
+
+            // 알림 표시
+            NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                notificationManager.createNotificationChannel(new NotificationChannel("default", "기본 채널", NotificationManager.IMPORTANCE_DEFAULT));
+            }
+            // id값은 정의해야하는 각 알림의 고유한 int값
+            notificationManager.notify(1, builder.build());
+        }
+    }
+
+    private void removeNotification() {
+        if(alarm_status) {
+            alarm_status = false;
+            // Notification 제거
+            NotificationManagerCompat.from(this).cancel(1);
+        }
     }
 
     @Override
