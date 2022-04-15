@@ -78,11 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
         camera = findViewById(R.id.camera);
         camera.setOnClickListener(v -> {
-            /*
-            Toast.makeText(getApplicationContext(),"이미지는 밝고 평평한 곳에서 촬영해주세요.",Toast.LENGTH_LONG).show();
-            Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-            camera_launcher.launch(cameraIntent);
-             */
             dispatchTakePictureIntent();
         });
 

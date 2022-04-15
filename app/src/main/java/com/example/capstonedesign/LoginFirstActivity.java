@@ -63,130 +63,7 @@ public class LoginFirstActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-        //circle.setAnimation(first_flowAnim);
-        /*
-        signInButton = findViewById(R.id.signInButton);
-        mAuth = FirebaseAuth.getInstance();
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-        mGoogleSignInClient = GoogleSignIn.getClient(MainActivity.this, gso);
-    */
     }
-
-    /*
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.signInButton:
-                signIn();
-                break;
-        }
-    }
-
-
-    private void signIn() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
-        }
-    }
-
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            GoogleSignInAccount acct = completedTask.getResult(ApiException.class);
-
-            if (acct != null) {
-                String personName = acct.getDisplayName();
-                String personGivenName = acct.getGivenName();
-                String personFamilyName = acct.getFamilyName();
-                String personEmail = acct.getEmail();
-                String personId = acct.getId();
-                Uri personPhoto = acct.getPhotoUrl();
-
-                Log.d(TAG, "handleSignInResult:personName "+personName);
-                Log.d(TAG, "handleSignInResult:personGivenName "+personGivenName);
-                Log.d(TAG, "handleSignInResult:personEmail "+personEmail);
-                Log.d(TAG, "handleSignInResult:personId "+personId);
-                Log.d(TAG, "handleSignInResult:personFamilyName "+personFamilyName);
-                Log.d(TAG, "handleSignInResult:personPhoto "+personPhoto);
-            }
-        } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.e(TAG, "signInResult:failed code=" + e.getStatusCode());
-
-        }
-    }
-    */
-    /*
-    private void signIn() {
-        Intent intent = new Intent(mGoogleSignInClient.getSignInIntent());
-        mStartForResult.launch(intent);
-    }
-
-    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            result -> {
-                //result.getResultCode()를 통하여 결과값 확인
-                if(result.getResultCode() == RC_SIGN_IN) {
-                    Toast.makeText(getApplicationContext(), "OK", Toast.LENGTH_SHORT).show();
-                }
-                if(result.getResultCode() == RESULT_CANCELED){
-                    Toast.makeText(getApplicationContext(), "NO", Toast.LENGTH_SHORT).show();
-                }
-            }
-    );
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuthWithGoogle(account);
-            } catch (ApiException e) {
-            }
-        }
-    }
-
-    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            updateUI(null);
-                        }
-                    }
-                });
-    }
-
-    private void updateUI(FirebaseUser user) { //update ui code here
-        if (user != null) {
-            Intent intent = new Intent(this, AfterActivity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
-     */
 
     public static void startAnimation(final int view, final Activity activity) {
         final int start = Color.parseColor("#0099FF");
@@ -233,23 +110,12 @@ public class LoginFirstActivity extends AppCompatActivity{
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
-        // 기존 뒤로 가기 버튼의 기능을 막기 위해 주석 처리 또는 삭제
-
-        // 마지막으로 뒤로 가기 버튼을 눌렀던 시간에 2.5초를 더해 현재 시간과 비교 후
-        // 마지막으로 뒤로 가기 버튼을 눌렀던 시간이 2.5초가 지났으면 Toast 출력
-        // 2500 milliseconds = 2.5 seconds
         if (System.currentTimeMillis() > backKeyPressedTime + 2500) {
             backKeyPressedTime = System.currentTimeMillis();
             toast = Toast.makeText(this, "한번 더 누르시면 종료됩니다.", Toast.LENGTH_LONG);
-            // ViewGroup group = (ViewGroup)toast.getView();
-            // TextView msgTextView = (TextView)group.getChildAt(0);
-            // msgTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 10);
             toast.show();
             return;
         }
-        // 마지막으로 뒤로 가기 버튼을 눌렀던 시간에 2.5초를 더해 현재 시간과 비교 후
-        // 마지막으로 뒤로 가기 버튼을 눌렀던 시간이 2.5초가 지나지 않았으면 종료
         if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {
             NotificationManagerCompat.from(this).cancel(1);
             finishAffinity(); // 해당 애플리케이션의 루트 액티비티 종료

@@ -171,6 +171,7 @@ id login_btn
 id medicine
 id medicine_background
 id medicine_circle
+id medicine_circle1
 id medicine_circle2
 id medicine_circle3
 id medicine_circle4

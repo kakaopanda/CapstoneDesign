@@ -112,23 +112,12 @@ public class AnalyzeActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
-        // 기존 뒤로 가기 버튼의 기능을 막기 위해 주석 처리 또는 삭제
-
-        // 마지막으로 뒤로 가기 버튼을 눌렀던 시간에 2.5초를 더해 현재 시간과 비교 후
-        // 마지막으로 뒤로 가기 버튼을 눌렀던 시간이 2.5초가 지났으면 Toast 출력
-        // 2500 milliseconds = 2.5 seconds
         if (System.currentTimeMillis() > backKeyPressedTime + 2500) {
             backKeyPressedTime = System.currentTimeMillis();
             toast = Toast.makeText(this, "한번 더 누르시면 종료됩니다.", Toast.LENGTH_LONG);
-            // ViewGroup group = (ViewGroup)toast.getView();
-            // TextView msgTextView = (TextView)group.getChildAt(0);
-            // msgTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 10);
             toast.show();
             return;
         }
-        // 마지막으로 뒤로 가기 버튼을 눌렀던 시간에 2.5초를 더해 현재 시간과 비교 후
-        // 마지막으로 뒤로 가기 버튼을 눌렀던 시간이 2.5초가 지나지 않았으면 종료
         if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {
             NotificationManagerCompat.from(this).cancel(1);
             finishAffinity(); // 해당 애플리케이션의 루트 액티비티 종료

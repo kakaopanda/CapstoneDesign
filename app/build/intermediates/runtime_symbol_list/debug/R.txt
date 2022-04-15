@@ -2987,6 +2987,7 @@ int id material_value_index 0x7f090122
 int id medicine 0x7f090123
 int id medicine_background 0x7f090124
 int id medicine_circle 0x7f090233
+int id medicine_circle1 0x7f09024d
 int id medicine_circle2 0x7f090234
 int id medicine_circle3 0x7f090235
 int id medicine_circle4 0x7f09024a

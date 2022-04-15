@@ -54,6 +54,10 @@
                 android:resource="@xml/filepaths" />
         </provider>
 
+        <service
+            android:name="com.example.capstonedesign.TerminationService"
+            android:stopWithTask="false" />
+
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
