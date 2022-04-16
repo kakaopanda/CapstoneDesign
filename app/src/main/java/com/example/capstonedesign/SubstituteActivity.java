@@ -31,9 +31,7 @@ public class SubstituteActivity extends AppCompatActivity {
     TextView result_name4, result_name5;
     Animation opacityAnim, scaleAnim, scaleAnim2, scaleAnim3;
 
-    // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
     private long backKeyPressedTime = 0;
-    // 첫 번째 뒤로 가기 버튼을 누를 때 표시
     private Toast toast;
 
     @Override

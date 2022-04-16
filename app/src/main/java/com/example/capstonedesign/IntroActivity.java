@@ -105,15 +105,11 @@ public class IntroActivity extends AppCompatActivity {
             builder.setContentTitle("서치필(Search Pill)");
             builder.setContentText("현재 애플리케이션이 동작중입니다.");
             builder.setColor(ContextCompat.getColor(this, R.color.french_blue));
-            // 사용자가 탭을 클릭하면 자동 제거
             builder.setAutoCancel(true);
-
-            // 알림 표시
             NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 notificationManager.createNotificationChannel(new NotificationChannel("default", "기본 채널", NotificationManager.IMPORTANCE_DEFAULT));
             }
-            // id값은 정의해야하는 각 알림의 고유한 int값
             notificationManager.notify(1, builder.build());
         }
     }
@@ -121,7 +117,6 @@ public class IntroActivity extends AppCompatActivity {
     private void removeNotification() {
         if(alarm_status) {
             alarm_status = false;
-            // Notification 제거
             NotificationManagerCompat.from(this).cancel(1);
         }
     }

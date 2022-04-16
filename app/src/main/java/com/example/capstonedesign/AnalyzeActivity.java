@@ -29,9 +29,7 @@ public class AnalyzeActivity extends AppCompatActivity {
     Animation opacityAnim, scaleAnim, scaleAnim2, scaleAnim3;
     TextView result_name2;
 
-    // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
     private long backKeyPressedTime = 0;
-    // 첫 번째 뒤로 가기 버튼을 누를 때 표시
     private Toast toast;
 
     @Override

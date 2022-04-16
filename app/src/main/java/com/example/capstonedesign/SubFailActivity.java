@@ -15,9 +15,7 @@ import androidx.core.app.NotificationManagerCompat;
 public class SubFailActivity extends AppCompatActivity {
     ImageView reanalyze_btn2;
 
-    // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
     private long backKeyPressedTime = 0;
-    // 첫 번째 뒤로 가기 버튼을 누를 때 표시
     private Toast toast;
 
     @Override
