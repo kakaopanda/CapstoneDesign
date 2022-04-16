@@ -272,3 +272,4 @@ string hello_blank_fragment
 string project_id
 style Theme.CapstoneDesign
 xml filepaths
+xml network_security_config

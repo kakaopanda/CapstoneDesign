@@ -1,9 +1,9 @@
-#Tue Apr 12 01:11:36 KST 2022
-base.2=C\:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+#Sat Apr 16 20:45:38 KST 2022
+base.2=C\:\\Users\\lukai\\Desktop\\CapstoneDesign\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
 path.2=7/classes.dex
-base.1=C\:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.1=C\:\\Users\\lukai\\Desktop\\CapstoneDesign\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 path.1=0/classes.dex
-base.0=C\:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.0=C\:\\Users\\lukai\\Desktop\\CapstoneDesign\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
