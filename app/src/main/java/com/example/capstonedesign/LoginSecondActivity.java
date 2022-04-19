@@ -89,7 +89,7 @@ public class LoginSecondActivity extends AppCompatActivity {
         Toast serverErrorToast = Toast.makeText(getApplicationContext(), "SERVER ERROR", Toast.LENGTH_LONG);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.35.216:8080/")
+                .baseUrl("http://192.168.35.219:8080/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         LoginService service = retrofit.create(LoginService.class);

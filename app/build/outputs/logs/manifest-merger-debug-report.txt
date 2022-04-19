@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-45:12
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-47:12
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\lukai\.gradle\caches\transforms-3\2e1d4535823235787ec5c3d7d4890695\transformed\circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\lukai\.gradle\caches\transforms-3\386394a50e8a8e86cffa5c9948621de6\transformed\glide-4.10.0\AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\lukai\.gradle\caches\transforms-3\da4496db05b3a0f6f7e00e5722aa8e8d\transformed\firebase-auth-19.0.0\AndroidManifest.xml:17:1-42:12
@@ -60,20 +60,20 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\lukai\.gradle\ca
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\lukai\.gradle\caches\transforms-3\73ceb3afe59ec363fd2600cddc5c90e5\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\lukai\.gradle\caches\transforms-3\96c6b5c1d33ae62b280a57bf07ec3c43\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\lukai\.gradle\caches\transforms-3\79f5a3fa03a16d194c897ec71b55329b\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-47:12
 	package
 		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-47:12
 		INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:1-47:12
 		INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:2:11-69
@@ -84,11 +84,15 @@ MERGED from [com.google.firebase:firebase-database:20.0.4] C:\Users\lukai\.gradl
 	android:name
 		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:4:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:5:5-81
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:5:5-80
 	android:name
 		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:5:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:6:22-77
 application
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:6:5-44:19
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:7:5-46:19
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\lukai\.gradle\caches\transforms-3\2e1d4535823235787ec5c3d7d4890695\transformed\circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\lukai\.gradle\caches\transforms-3\2e1d4535823235787ec5c3d7d4890695\transformed\circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\lukai\.gradle\caches\transforms-3\386394a50e8a8e86cffa5c9948621de6\transformed\glide-4.10.0\AndroidManifest.xml:10:5-20
@@ -129,100 +133,102 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\lukai\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\lukai\.gradle\caches\transforms-3\7daa621a439079be7472f59471227879\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:25:5-35:19
 MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\lukai\.gradle\caches\transforms-3\60031db0b49ca91f405a411b9538a28a\transformed\startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\lukai\.gradle\caches\transforms-3\60031db0b49ca91f405a411b9538a28a\transformed\startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
+	android:requestLegacyExternalStorage
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:15:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] C:\Users\lukai\.gradle\caches\transforms-3\4a73645463199b9fea916370cbff35e3\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:9:9-41
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:10:9-54
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:11:9-54
 	android:icon
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:8:9-43
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:7:9-35
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:12:9-52
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:13:9-52
 	android:networkSecurityConfig
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:13:9-69
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:14:9-69
 activity#com.example.capstonedesign.IntroActivity
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:14:9-21:20
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:16:9-23:20
 	android:exported
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:16:13-36
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:15:13-42
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:17:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:17:13-20:29
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:21:27-74
 activity#com.example.capstonedesign.LoginFirstActivity
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:22:9-55
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:24:9-55
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:22:19-53
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:24:19-53
 activity#com.example.capstonedesign.LoginSecondActivity
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:23:9-56
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:25:9-56
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:23:19-54
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:25:19-54
 activity#com.example.capstonedesign.SignupFirstActivity
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:24:9-56
-	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:24:19-54
-activity#com.example.capstonedesign.SignupSecondActivity
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:25:9-57
-	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:25:19-55
-activity#com.example.capstonedesign.SignupThirdActivity
 ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:26:9-56
 	android:name
 		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:26:19-54
+activity#com.example.capstonedesign.SignupSecondActivity
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:27:9-57
+	android:name
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:27:19-55
+activity#com.example.capstonedesign.SignupThirdActivity
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:28:9-56
+	android:name
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:28:19-54
 activity#com.example.capstonedesign.MainActivity
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:27:9-49
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:29:9-49
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:27:19-47
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:29:19-47
 activity#com.example.capstonedesign.AnalyzeActivity
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:28:9-52
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:30:9-52
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:28:19-50
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:30:19-50
 activity#com.example.capstonedesign.SubstituteActivity
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:29:9-55
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:31:9-55
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:29:19-53
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:31:19-53
 activity#com.example.capstonedesign.AnalyzeFailActivity
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:30:9-56
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:32:9-56
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:30:19-54
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:32:19-54
 activity#com.example.capstonedesign.SubFailActivity
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:31:9-52
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:33:9-52
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:31:19-50
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:33:19-50
 provider#androidx.core.content.FileProvider
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:32:9-40:20
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:34:9-42:20
 	android:grantUriPermissions
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:35:13-47
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:37:13-47
 	android:authorities
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:34:13-74
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:36:13-74
 	android:exported
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:36:13-37
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:38:13-37
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:33:13-62
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:35:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:37:13-39:53
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:39:13-41:53
 	android:resource
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:39:17-50
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:41:17-50
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:38:17-67
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:40:17-67
 service#com.example.capstonedesign.TerminationService
-ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:41:9-43:44
+ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:43:9-45:44
 	android:stopWithTask
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:43:13-41
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:45:13-41
 	android:name
-		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:42:13-47
+		ADDED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml:44:13-47
 uses-sdk
 INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\lukai\Desktop\CapstoneDesign\app\src\main\AndroidManifest.xml
