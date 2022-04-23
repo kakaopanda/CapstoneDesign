@@ -19,13 +19,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7495d445-e3aa-4042-a73b-f37e1b184af5" name="Default Changelist" comment="20220415" />
+    <list default="true" id="7495d445-e3aa-4042-a73b-f37e1b184af5" name="Default Changelist" comment="20220416">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/capstonedesign/AnalyzeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/capstonedesign/AnalyzeActivity.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[emulator-5554]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -322,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650031733303</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="20220416">
+      <created>1650077282646</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1650077282646</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,6 +355,7 @@
     <MESSAGE value="20220410" />
     <MESSAGE value="20220412" />
     <MESSAGE value="20220415" />
-    <option name="LAST_COMMIT_MESSAGE" value="20220415" />
+    <MESSAGE value="20220416" />
+    <option name="LAST_COMMIT_MESSAGE" value="20220416" />
   </component>
 </project>
