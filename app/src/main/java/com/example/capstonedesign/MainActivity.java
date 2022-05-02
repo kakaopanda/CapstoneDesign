@@ -1,5 +1,7 @@
 package com.example.capstonedesign;
 
+import static com.example.capstonedesign.LoginFirstActivity.serverUrl;
+
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.ContentUris;
@@ -259,7 +261,7 @@ public class MainActivity extends AppCompatActivity {
     // 경로로 주어진 이미지 서버로 전송
     private void uploadImage(String path) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.35.219:8080")
+                .baseUrl(serverUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         File file = new File(path);

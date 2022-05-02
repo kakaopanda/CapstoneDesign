@@ -1,5 +1,7 @@
 package com.example.capstonedesign;
 
+import static com.example.capstonedesign.LoginFirstActivity.serverUrl;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -36,7 +38,6 @@ public class LoginSecondActivity extends AppCompatActivity {
         // 회원가입 버튼
         signup_btn = findViewById(R.id.signup_btn);
         signup_btn.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SignupFirstActivity.class);
@@ -47,7 +48,6 @@ public class LoginSecondActivity extends AppCompatActivity {
         // 로그인 버튼
         login_btn = findViewById(R.id.login_btn);
         login_btn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 login();
@@ -57,7 +57,6 @@ public class LoginSecondActivity extends AppCompatActivity {
         // 다른 방법으로 로그인 버튼
         another_btn = findViewById(R.id.another_btn);
         another_btn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LoginFirstActivity.class);
@@ -85,11 +84,11 @@ public class LoginSecondActivity extends AppCompatActivity {
         String pw = pwText.getText().toString();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         Gson gson = new GsonBuilder().setLenient().create();
-        Toast failedToast = Toast.makeText(getApplicationContext(), "LOGIN FAILED", Toast.LENGTH_LONG);
-        Toast serverErrorToast = Toast.makeText(getApplicationContext(), "SERVER ERROR", Toast.LENGTH_LONG);
+        Toast failedToast = Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_LONG);
+        Toast serverErrorToast = Toast.makeText(getApplicationContext(), "서버 오류", Toast.LENGTH_LONG);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.35.219:8080/")
+                .baseUrl(serverUrl)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         LoginService service = retrofit.create(LoginService.class);
@@ -102,20 +101,19 @@ public class LoginSecondActivity extends AppCompatActivity {
                     String result = response.body();
                     if(result.equals("SUCCESS")) {
                         startActivity(intent);
-                        Log.d("Login","onResponse: 성공, 결과:\n"+result.toString());
+                        Log.e("Login","onResponse: 성공, 결과: "+result.toString());
                     }
-                    else {
-                        failedToast.show();
-                    }
-                } else {
+                    else {failedToast.show();}
+                }
+                else {
                     failedToast.show();
-                    Log.d("Login", "onResponse: 실패");
+                    Log.e("Login", "onResponse: 실패");
                 }
             }
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 serverErrorToast.show();
-                Log.d("TAG", "onFailure " + t.getMessage());
+                Log.e("Login", "onFailure " + t.getMessage());
             }
         });
     }

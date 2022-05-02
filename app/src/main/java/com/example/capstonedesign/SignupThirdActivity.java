@@ -23,7 +23,6 @@ public class SignupThirdActivity extends AppCompatActivity {
 
         submit_btn = findViewById(R.id.submit_btn);
         submit_btn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LoginFirstActivity.class);

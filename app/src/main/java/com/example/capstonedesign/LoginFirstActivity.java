@@ -30,6 +30,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginFirstActivity extends AppCompatActivity{
+    public static String serverUrl = "http://192.168.35.8:8080/";
     private FirebaseAuth mAuth = null;
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
@@ -55,8 +56,8 @@ public class LoginFirstActivity extends AppCompatActivity{
         progressBar2 = findViewById(R.id.progressbar2);
         first_flowAnim = AnimationUtils.loadAnimation(this, R.anim.rotate);
 
+        // 이메일로 로그인 버튼
         email_login.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LoginSecondActivity.class);
