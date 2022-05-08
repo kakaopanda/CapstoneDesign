@@ -31,6 +31,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginFirstActivity extends AppCompatActivity{
     // JAVA Object
+    public static String serverUrl = "http://192.168.35.8:8080/";
     private Animation scaleAnim, rotateAnim;
     private Toast toast;
     private long backKeyPressedTime = 0;
@@ -57,8 +58,8 @@ public class LoginFirstActivity extends AppCompatActivity{
         scaleAnim = AnimationUtils.loadAnimation(this, R.anim.scale4);
         glass_image.setAnimation(scaleAnim);
 
+        // 이메일로 로그인 버튼
         email_login.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LoginSecondActivity.class);
