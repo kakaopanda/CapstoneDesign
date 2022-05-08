@@ -6,24 +6,9 @@
     android:layout_height="match_parent"
     android:gravity="center"
     >
-<!--
-    <ImageView
-        android:id="@+id/splash_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/icon_splash"
-        android:translationZ="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/splash_title"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454"
-        tools:ignore="MissingConstraints" />
-        -->
 
     <TextView
-        android:id="@+id/splash_title"
+        android:id="@+id/splash_title1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee"
@@ -106,7 +91,7 @@
         tools:ignore="MissingConstraints" />
 
     <View
-        android:id="@+id/gradientPreloaderView"
+        android:id="@+id/gradient_preloader_view"
         android:layout_width="match_parent"
         android:visibility="gone"
         android:layout_height="match_parent"

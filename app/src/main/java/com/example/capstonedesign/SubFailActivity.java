@@ -13,10 +13,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationManagerCompat;
 
 public class SubFailActivity extends AppCompatActivity {
-    ImageView reanalyze_btn2;
-
-    private long backKeyPressedTime = 0;
+    // JAVA Object
     private Toast toast;
+    private long backKeyPressedTime = 0;
+
+    // XML Object
+    private ImageView reanalyze_btn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,15 +28,14 @@ public class SubFailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_substitution_fail);
 
-        reanalyze_btn2 = findViewById(R.id.reanalyze_btn2);
-        reanalyze_btn2.setOnClickListener(new View.OnClickListener() {
+        reanalyze_btn = findViewById(R.id.reanalyze_btn);
+        reanalyze_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 
     private void applyColors() {
@@ -50,7 +51,6 @@ public class SubFailActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
         if (System.currentTimeMillis() > backKeyPressedTime + 2500) {
             backKeyPressedTime = System.currentTimeMillis();
             toast = Toast.makeText(this, "한번 더 누르시면 종료됩니다.", Toast.LENGTH_LONG);

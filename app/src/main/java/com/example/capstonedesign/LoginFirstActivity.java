@@ -30,15 +30,13 @@ import com.google.android.gms.common.SignInButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginFirstActivity extends AppCompatActivity{
-    private FirebaseAuth mAuth = null;
-    private GoogleSignInClient mGoogleSignInClient;
-    private static final int RC_SIGN_IN = 9001;
-    private SignInButton signInButton;
-    ProgressBar progressBar, progressBar2;
-    TextView textView7;
-    ImageView circle,upload, email_login;
+    // JAVA Object
+    private Animation scaleAnim, rotateAnim;
+    private Toast toast;
+    private long backKeyPressedTime = 0;
 
-    Animation first_flowAnim, second_flowAnim, third_flowAnim;
+    // XML Object
+    private ImageView email_login, medicine_image, glass_image;
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
@@ -49,11 +47,15 @@ public class LoginFirstActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_first);
 
-        circle = findViewById(R.id.circle);
-        upload = findViewById(R.id.upload);
         email_login = findViewById(R.id.email_login);
-        progressBar2 = findViewById(R.id.progressbar2);
-        first_flowAnim = AnimationUtils.loadAnimation(this, R.anim.rotate);
+        medicine_image = findViewById(R.id.medicine_image);
+
+        rotateAnim = AnimationUtils.loadAnimation(this, R.anim.rotate3);
+        medicine_image.setAnimation(rotateAnim);
+
+        glass_image = findViewById(R.id.glass_image);
+        scaleAnim = AnimationUtils.loadAnimation(this, R.anim.scale4);
+        glass_image.setAnimation(scaleAnim);
 
         email_login.setOnClickListener(new View.OnClickListener() {
 
@@ -63,33 +65,6 @@ public class LoginFirstActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-    }
-
-    public static void startAnimation(final int view, final Activity activity) {
-        final int start = Color.parseColor("#0099FF");
-        final int mid = Color.parseColor("#551073B4");
-        final int end = Color.parseColor("#55000080");
-        final ArgbEvaluator evaluator = new ArgbEvaluator();
-        View preloader = activity.findViewById(R.id.gradientPreloaderView);
-        preloader.setVisibility(View.VISIBLE);
-        final GradientDrawable gradient = (GradientDrawable) preloader.getBackground();
-        ValueAnimator animator = TimeAnimator.ofFloat(0.0f, 1.0f);
-        animator.setDuration(3000);
-        animator.setRepeatCount(ValueAnimator.INFINITE);
-        animator.setRepeatMode(ValueAnimator.REVERSE);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                Float fraction = valueAnimator.getAnimatedFraction();
-                int newStrat = (int) evaluator.evaluate(fraction, start, end);
-                int newMid = (int) evaluator.evaluate(fraction, mid, start);
-                int newEnd = (int) evaluator.evaluate(fraction, end, mid);
-                int[] newArray = {newStrat, newMid, newEnd}; gradient.setColors(newArray);
-            } }); animator.start();
-    }
-
-    public static void stopAnimation(final int view, final Activity activity){
-        ObjectAnimator.ofFloat(activity.findViewById(view), "alpha", 0f).setDuration(125).start();
     }
 
     @Override
@@ -102,11 +77,6 @@ public class LoginFirstActivity extends AppCompatActivity{
         getWindow().setStatusBarColor(Color.parseColor("#FF1073B4"));
         getWindow().setNavigationBarColor(Color.parseColor("#FF1073B4"));
     }
-
-    // 마지막으로 뒤로 가기 버튼을 눌렀던 시간 저장
-    private long backKeyPressedTime = 0;
-    // 첫 번째 뒤로 가기 버튼을 누를 때 표시
-    private Toast toast;
 
     @Override
     public void onBackPressed() {

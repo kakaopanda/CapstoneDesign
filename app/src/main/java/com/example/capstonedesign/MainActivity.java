@@ -34,16 +34,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
+    // JAVA Object
+    private final int REQUEST_TAKE_PHOTO = 1;
     private final String TAG = this.getClass().getSimpleName();
-    ImageView upload, medicine, camera;
-    TextView textView8;
-    Uri AnalyzeImage = null;
 
-    String mCurrentPhotoPath;
-    static final int REQUEST_TAKE_PHOTO = 1;
-
-    private long backKeyPressedTime = 0;
+    public Uri AnalyzeImage = null;
     private Toast toast;
+    private String mCurrentPhotoPath;
+    private long backKeyPressedTime = 0;
+
+    // XML Object
+    private ImageView analyze_target, upload_btn, camera_btn;
+    private TextView quantity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,34 +55,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        upload = findViewById(R.id.upload);
-        upload.setOnClickListener(new View.OnClickListener() {
-
+        upload_btn = findViewById(R.id.upload_btn);
+        upload_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Toast.makeText(getApplicationContext(),AnalyzeImage.toString(),Toast.LENGTH_LONG).show();
-
                 Intent intent = new Intent(getApplicationContext(), AnalyzeActivity.class);
                 startActivity(intent);
             }
         });
 
-        medicine = findViewById(R.id.medicine);
-        medicine.setOnClickListener(v -> {
+        analyze_target = findViewById(R.id.analyze_target);
+        analyze_target.setOnClickListener(v -> {
+            // 촬영시 주의사항을 담은 Toast Message 출력
             Toast.makeText(getApplicationContext(),"분석할 이미지를 업로드 해주세요.",Toast.LENGTH_LONG).show();
+
+            // 갤러리에서 분석할 이미지 파일을 가져오는 Intent 객체 생성
             Intent intent = new Intent();
             intent.setType("image/*");
             intent.setAction(Intent.ACTION_GET_CONTENT);
-            launcher.launch(intent);
+            gallery_launcher.launch(intent);
         });
 
-        camera = findViewById(R.id.camera);
-        camera.setOnClickListener(v -> {
+        camera_btn = findViewById(R.id.camera_btn);
+        camera_btn.setOnClickListener(v -> {
             dispatchTakePictureIntent();
         });
 
-        textView8 = findViewById(R.id.textView8);
-        textView8.setOnClickListener(new View.OnClickListener() {
+        quantity = findViewById(R.id.quantity);
+        quantity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AnalyzeFailActivity.class);
@@ -90,26 +92,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void dispatchTakePictureIntent() {
+        // 사진 촬영 인텐트(MediaStore.ACTION_IMAGE_CAPTURE)를 지정한 새로운 Intent를 생성한다.
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Ensure that there's a camera activity to handle the intent
+
+        // 사진 촬영을 수행할 수 있는 Activity를 탐색하고, 존재하지 않으면 null을 반환한다.
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            // Create the File where the photo should go
             File photoFile = null;
             try {
+                // 촬영한 사진을 이미지 파일로 저장한다.
                 photoFile = createImageFile();
-            } catch (IOException ex) {
-                // Error occurred while creating the File
-            }
-            // Continue only if the File was successfully created
+            } catch (IOException ex) {}
             if (photoFile != null) {
+                // 촬영한 사진에 대해 이미지 파일이 정상적으로 생성된 경우,
+                // FileProvider.getUriForFile()에 File 객체를 넘긴 뒤, PhotoURI를 반환받는다.
                 Uri photoURI = FileProvider.getUriForFile(this,
                         "com.example.capstonedesign.fileprovider",
                         photoFile);
+                // Extra Data는 인텐트 간 공유할 실제 데이터를 저장하며, Key/Value 쌍의 구조이다.
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                // startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
 
+                // Camera Activity로 전환되면서 주의사항이 담긴 Toast Message 출력
                 Toast.makeText(getApplicationContext(),"이미지는 밝고 평평한 곳에서 촬영해주세요.",Toast.LENGTH_LONG).show();
-                test_launcher.launch(takePictureIntent);
+                camera_launcher.launch(takePictureIntent);
             }
         }
     }
@@ -141,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                         Bitmap bitmap = MediaStore.Images.Media
                                 .getBitmap(getContentResolver(), Uri.fromFile(file));
                         if (bitmap != null) {
-                            medicine.setImageBitmap(bitmap);
+                            analyze_target.setImageBitmap(bitmap);
                         }
                     }
                     break;
@@ -153,7 +157,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    ActivityResultLauncher<Intent> test_launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+    // startActivity()는 Parent Activity에서 Child Activity의 결과를 처리하지 않아도 될때 사용하며, 처리가 필요한 경우 startActivityForResult()를 사용한다.
+    // startActivityForResult()의 경우, RequestCode를 통해 각 Activity들을 구분했었는데, 가독성이 떨어지고 메모리 부족으로 인해 Parent Activity가 소멸될 수 있는 문제점이 존재했다.
+    // 이러한 문제점의 극복을 위해, deprecated 처리되었으며 대체방안으로 ActivityResultLauncher가 추가되었다.
+    // 처리 결과를 수신할 Activity에서 ActivityResultLauncher를 정의하고, launch()를 통해 Child Activity를 활성화할 수 있다.
+    // Contract를 정의한 뒤, registerForActivityResult() 메소드 호출을 통해 Callback을 등록할 수 있고, 결과를 받기 위해 StartActivityForResult()를 인자로 호출한다.
+    ActivityResultLauncher<Intent> camera_launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            // ActivityResultCallback은 ActivityResultContract에 정의된 출력 유형(ActivityResult)의 객체를 가져오는 onActivityResult() 메서드가 포함된 단일 메서드 인터페이스이다.
             new ActivityResultCallback<ActivityResult>()
             {
                 @Override
@@ -161,23 +171,33 @@ public class MainActivity extends AppCompatActivity {
                 {
                     if (result.getResultCode() == RESULT_OK)
                     {
+                        // mCurrentPhotoPath는 현재 촬영을 통해 생성된 이미지파일이 위치한 절대경로를 나타내는 String 전역 변수이다.
                         File file = new File(mCurrentPhotoPath);
                         Bitmap bitmap = null;
+                        // API LEVEL >= 28 (Android 9, Pie)인 경우, ImageDecoder를 이용하여 Decoding을 수행한다.
                         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
                             try {
+                                // 촬영된 이미지의 URI를 인수로 제공하여 Bitmap 형식으로 변환한다.
                                 bitmap = ImageDecoder.decodeBitmap(ImageDecoder.createSource(getContentResolver(),Uri.fromFile(file)));
+                                // SimpleDateFormat을 통해, 촬영된 이미지의 이름 형식을 지정한다.
                                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초");
+                                // MediaStore.Images.Media.insertImage -> Deprecated Method(API 29)
+                                // MediaStore의 insertImage()를 이용하여, 시스템 갤러리에 촬영된 이미지를 저장한다.
                                 MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, simpleDateFormat.format(new Date()), "");
+                                // 촬영 후, 저장된 이미지가 갤러리에 저장되었음을 반영하기 위해, 미디어 스캐닝을 실시한다.
                                 sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File("/sdcard/DCIM/image.jpg"))));
-
-                                // Bitmap Image ReSizing
-                                // Bitmap resized = Bitmap.createScaledBitmap(bitmap, 250, 250, true);
-                                // SimpleDateFormat resizeDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초"+"(Resize)");
-                                // MediaStore.Images.Media.insertImage(getContentResolver(), resized, resizeDateFormat.format(new Date()), "");
+                                /*
+                                    // [Bitmap Image ReSizing] 모델로 분석이미지를 전송할 때, 이미지의 크기를 조정할 필요가 있는 경우 고려한다.
+                                            Bitmap resized = Bitmap.createScaledBitmap(bitmap, 250, 250, true);
+                                            SimpleDateFormat resizeDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초"+"(Resize)");
+                                            MediaStore.Images.Media.insertImage(getContentResolver(), resized, resizeDateFormat.format(new Date()), "");
+                                 */
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
                         }
+                        // API LEVEL < 28인 경우, MediaStore를 이용하여 Decoding을 수행한다.
+                        // 이외의 나머지 작업은 위의 작업과 동일하다.
                         else{
                             try {
                                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), Uri.fromFile(file));
@@ -189,36 +209,13 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         if (bitmap != null) {
-                            medicine.setImageBitmap(bitmap);
+                            analyze_target.setImageBitmap(bitmap);
                         }
                     }
                 }
             });
 
-   ActivityResultLauncher<Intent> camera_launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
-                                new ActivityResultCallback<ActivityResult>()
-                                {
-                                    @Override
-                                    public void onActivityResult(ActivityResult result)
-                                    {
-                                        if (result.getResultCode() == RESULT_OK)
-                                        {
-
-                                            Intent intent = result.getData();
-                                            Bundle extras = intent.getExtras();
-                                            Bitmap imageBitmap = (Bitmap) extras.get("data");
-                                            intent.hasExtra("data");
-
-                                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초");
-                        MediaStore.Images.Media.insertImage(getContentResolver(), imageBitmap, simpleDateFormat.format(new Date()), "");
-                        sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File("/sdcard/DCIM/image.jpg"))));
-                        medicine.setImageBitmap(imageBitmap);
-                    }
-                }
-            });
-
-
-    ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+    ActivityResultLauncher<Intent> gallery_launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>()
             {
                 @Override
@@ -232,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
                         Uri uri = intent.getData();
                         AnalyzeImage = uri;
                         Log.e(TAG, "uri : " + uri);
-                        medicine.setImageURI(uri);
+                        analyze_target.setImageURI(uri);
                     }
                 }
             });
@@ -250,9 +247,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
-        // 기존 뒤로 가기 버튼의 기능을 막기 위해 주석 처리 또는 삭제
-
         // 마지막으로 뒤로 가기 버튼을 눌렀던 시간에 2.5초를 더해 현재 시간과 비교 후
         // 마지막으로 뒤로 가기 버튼을 눌렀던 시간이 2.5초가 지났으면 Toast 출력
         // 2500 milliseconds = 2.5 seconds

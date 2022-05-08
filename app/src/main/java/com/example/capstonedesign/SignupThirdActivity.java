@@ -12,7 +12,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SignupThirdActivity extends AppCompatActivity {
-    ImageView submit_btn, glass;
+    // XML Object
+    private ImageView submit_btn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         applyColors();
@@ -30,8 +32,6 @@ public class SignupThirdActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        glass = findViewById(R.id.glass);
     }
 
     @Override

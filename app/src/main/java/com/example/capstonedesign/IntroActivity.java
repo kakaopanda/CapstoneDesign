@@ -26,17 +26,20 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 public class IntroActivity extends AppCompatActivity {
-    Animation splashAnim,splashAnim2, splashAnim3;
-    View gradientPreloaderView;
-    TextView splash_title, splash_title2, splash_title3, splash_title4;
-    boolean alarm_status = false;
+    // JAVA Object
+    private Animation splashAnim, splashAnim2, splashAnim3;
+    private boolean alarm_status = false;
+
+    // XML Object
+    private View gradient_preloader_view;
+    private TextView splash_title1, splash_title2, splash_title3, splash_title4;
 
     public static void startAnimation(final int view, final Activity activity) {
         final int start = Color.parseColor("#0099FF");
         final int mid = Color.parseColor("#FF1073B4");
         final int end = Color.parseColor("#000080");
         final ArgbEvaluator evaluator = new ArgbEvaluator();
-        View preloader = activity.findViewById(R.id.gradientPreloaderView);
+        View preloader = activity.findViewById(R.id.gradient_preloader_view);
         preloader.setVisibility(View.VISIBLE);
         final GradientDrawable gradient = (GradientDrawable) preloader.getBackground();
         ValueAnimator animator = TimeAnimator.ofFloat(0.0f, 1.0f);
@@ -54,11 +57,6 @@ public class IntroActivity extends AppCompatActivity {
             } }); animator.start();
     }
 
-    public static void stopAnimation(final int view, final Activity activity){
-        ObjectAnimator.ofFloat(activity.findViewById(view), "alpha", 0f).setDuration(125).start();
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ActionBar actionBar = getSupportActionBar();
@@ -70,18 +68,18 @@ public class IntroActivity extends AppCompatActivity {
         splashAnim2 = AnimationUtils.loadAnimation(this, R.anim.splash2);
         splashAnim3 = AnimationUtils.loadAnimation(this, R.anim.splash3);
 
-        splash_title = findViewById(R.id.splash_title);
+        splash_title1 = findViewById(R.id.splash_title1);
         splash_title2 = findViewById(R.id.splash_title2);
         splash_title3 = findViewById(R.id.splash_title3);
         splash_title4 = findViewById(R.id.splash_title4);
 
-        splash_title.setAnimation(splashAnim3);
+        splash_title1.setAnimation(splashAnim3);
         splash_title2.setAnimation(splashAnim3);
         splash_title3.setAnimation(splashAnim3);
         splash_title4.setAnimation(splashAnim2);
 
-        gradientPreloaderView = findViewById(R.id.gradientPreloaderView);
-        gradientPreloaderView.setAnimation(splashAnim);
+        gradient_preloader_view = findViewById(R.id.gradient_preloader_view);
+        gradient_preloader_view.setAnimation(splashAnim);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -100,7 +98,6 @@ public class IntroActivity extends AppCompatActivity {
         if (!alarm_status) {
             alarm_status = true;
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default").setOngoing(true);
-
             builder.setSmallIcon(R.mipmap.ic_launcher);
             builder.setContentTitle("서치필(Search Pill)");
             builder.setContentText("현재 애플리케이션이 동작중입니다.");
@@ -114,21 +111,9 @@ public class IntroActivity extends AppCompatActivity {
         }
     }
 
-    private void removeNotification() {
-        if(alarm_status) {
-            alarm_status = false;
-            NotificationManagerCompat.from(this).cancel(1);
-        }
-    }
-
     @Override
     protected void onPause() {
         super.onPause();
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-    }
-
-    private void applyColors() {
-        getWindow().setStatusBarColor(Color.parseColor("#FF1073B4"));
-        getWindow().setNavigationBarColor(Color.parseColor("#FF1073B4"));
     }
 }

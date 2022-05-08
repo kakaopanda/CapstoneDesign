@@ -14,7 +14,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginSecondActivity extends AppCompatActivity {
-    ImageView signup_btn, login_btn, another_btn;
+    // XML Object
+    private ImageView signup_btn, login_btn, another_btn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         applyColors();

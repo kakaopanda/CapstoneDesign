@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_progress.xml.flat",
-        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable-v24\\progress.xml"
-    },
-    {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_image.png.flat",
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\image.png"
+    },
+    {
+        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_progress.xml.flat",
+        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable-v24\\progress.xml"
     },
     {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_login_btn_another.png.flat",
@@ -16,16 +16,24 @@
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_glass_fail.png.flat",
-        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\glass_fail.png"
-    },
-    {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_glass_fail.png.flat",
+        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\glass_fail.png"
+    },
+    {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_signup_second.xml.flat",
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\layout\\activity_signup_second.xml"
+    },
+    {
+        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_minus.png.flat",
+        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\minus.png"
+    },
+    {
+        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_plus.png.flat",
+        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\plus.png"
     },
     {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_analyze_fail.xml.flat",
@@ -40,12 +48,12 @@
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_box6.png.flat",
-        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\box6.png"
-    },
-    {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_confirm.png.flat",
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\confirm.png"
+    },
+    {
+        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_box6.png.flat",
+        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\box6.png"
     },
     {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\font_nanumbrushscript.ttf.flat",
@@ -252,10 +260,6 @@
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable-v24\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_substitution_temp.xml.flat",
-        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\layout\\activity_substitution_temp.xml"
-    },
-    {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_pill.png.flat",
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\pill.png"
     },
@@ -316,6 +320,10 @@
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\save_btn.png"
     },
     {
+        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\anim_rotate3.xml.flat",
+        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\anim\\rotate3.xml"
+    },
+    {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_login_second.xml.flat",
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\layout\\activity_login_second.xml"
     },
@@ -352,6 +360,10 @@
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\title_left.png"
     },
     {
+        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_box16.png.flat",
+        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\box16.png"
+    },
+    {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_medicine_background.png.flat",
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\medicine_background.png"
     },
@@ -384,6 +396,10 @@
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\glass.png"
     },
     {
+        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_box17.png.flat",
+        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\box17.png"
+    },
+    {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_camera.png.flat",
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\camera.png"
     },
@@ -408,12 +424,12 @@
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\drawable\\box3.png"
     },
     {
-        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_analyze_temp.xml.flat",
-        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\layout\\activity_analyze_temp.xml"
-    },
-    {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\anim_rotate2.xml.flat",
+        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\anim\\rotate2.xml"
     },
     {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_table.png.flat",
@@ -434,6 +450,10 @@
     {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_signup_third.xml.flat",
         "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\layout\\activity_signup_third.xml"
+    },
+    {
+        "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\anim_scale4.xml.flat",
+        "source": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\src\\main\\res\\anim\\scale4.xml"
     },
     {
         "merged": "C:\\Users\\kakao\\AndroidStudioProjects\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",

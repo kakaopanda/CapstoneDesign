@@ -7,26 +7,25 @@
     android:background="@color/french_blue"
     >
 
-
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/analyze_fail_subscription1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/regular"
         android:inputType="textPersonName"
-        android:text="재분석을 통해 다시 시도해주세요."
+        android:text="이미지 분석실패"
         android:textColor="#FFFFFFFF"
-        android:textSize="12dp"
+        android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22"
+        app:layout_constraintVertical_bias="0.07"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/analyze_fail_subscription2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/regular"
@@ -43,35 +42,24 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/analyze_fail_subscription3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/regular"
         android:inputType="textPersonName"
-        android:text="이미지 분석실패"
+        android:text="재분석을 통해 다시 시도해주세요."
         android:textColor="#FFFFFFFF"
-        android:textSize="40dp"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.246"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"
+        app:layout_constraintVertical_bias="0.22"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/reanalyze_btn2"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:src="@drawable/reanalyze_btn_another"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942" />
-
-    <ImageView
-        android:id="@+id/submit_btn2"
+        android:id="@+id/medicine_image"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/pill_background"
@@ -82,7 +70,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/glass"
+        android:id="@+id/glass_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/glass_fail"
@@ -92,5 +80,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.637" />
+
+    <ImageView
+        android:id="@+id/reanalyze_btn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:src="@drawable/reanalyze_btn_another"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,10 +13,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationManagerCompat;
 
 public class AnalyzeFailActivity extends AppCompatActivity {
-    ImageView reanalyze_btn2;
-
-    private long backKeyPressedTime = 0;
+    // JAVA Object
     private Toast toast;
+    private long backKeyPressedTime = 0;
+
+    // XML Object
+    private ImageView reanalyze_btn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,15 +28,14 @@ public class AnalyzeFailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analyze_fail);
 
-        reanalyze_btn2 = findViewById(R.id.reanalyze_btn2);
-        reanalyze_btn2.setOnClickListener(new View.OnClickListener() {
+        reanalyze_btn = findViewById(R.id.reanalyze_btn);
+        reanalyze_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 
     private void applyColors() {

@@ -12,7 +12,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SignupSecondActivity extends AppCompatActivity {
-    ImageView submit_btn;
+    // XML Object
+    private ImageView submit_btn;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         applyColors();
