@@ -1,14 +1,22 @@
 package com.example.capstonedesign;
 
+import static com.example.capstonedesign.LoginFirstActivity.serverUrl;
+import static com.example.capstonedesign.LoginSecondActivity.loginId;
+
 import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.ImageDecoder;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -28,10 +36,23 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.FileProvider;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     // JAVA Object
@@ -230,9 +251,191 @@ public class MainActivity extends AppCompatActivity {
                         AnalyzeImage = uri;
                         Log.e(TAG, "uri : " + uri);
                         analyze_target.setImageURI(uri);
+                        Log.e(TAG, "PATH: " + getFullPathFromContentUri(getApplicationContext(), uri));
+                        String path = getFullPathFromContentUri(getApplicationContext(), uri);
+                        uploadImage(path);
+                        saveImage(loginId, path);
                     }
                 }
             });
+
+    // 경로로 주어진 이미지 서버로 전송
+    private void uploadImage(String path) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(serverUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        File file = new File(path);
+        ImgUploadService service = retrofit.create(ImgUploadService.class);
+
+        RequestBody requestFile = RequestBody.create(MediaType.parse("jpg"), file);
+        MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
+
+        String descriptionString = "hello, this is description speaking";
+        RequestBody description = RequestBody.create(okhttp3.MultipartBody.FORM, descriptionString);
+
+        Call<ResponseBody> call = service.upload(description, body);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                Log.d("Upload", "success");
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.d("Upload error:", t.getMessage());
+            }
+        });
+    }
+
+    // 이미지 정보 데이터베이스 저장
+    private void saveImage(String id, String path) {
+        Gson gson = new GsonBuilder().setLenient().create();
+        String filename = new File(path).getName();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(serverUrl)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+        ImgInfoService service = retrofit.create(ImgInfoService.class);
+
+        Call<String> call = service.upload(id, filename);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if(response.isSuccessful()) {
+                    String result = response.body();
+                    Log.e("Image","onResponse: 성공, 결과: "+result.toString());
+                }
+                else {
+                    Log.e("Image", "onResponse: 실패" );
+                }
+            }
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.e("Image", "onFailure " + t.getMessage());
+            }
+        });
+    }
+
+    // URI에서 파일 절대경로 추출
+    public static String getFullPathFromContentUri(final Context context, final Uri uri) {
+
+        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+        String filePath = "";
+
+        // DocumentProvider
+        if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
+            // ExternalStorageProvider
+            if ("com.android.externalstorage.documents".equals(uri.getAuthority())) {
+                final String docId = DocumentsContract.getDocumentId(uri);
+                final String[] split = docId.split(":");
+                final String type = split[0];
+
+                if ("primary".equalsIgnoreCase(type)) {
+                    return Environment.getExternalStorageDirectory() + "/" + split[1];
+                }//non-primary e.g sd card
+                else {
+
+                    if (Build.VERSION.SDK_INT > 20) {
+                        //getExternalMediaDirs() added in API 21
+                        File extenal[] = context.getExternalMediaDirs();
+                        for (File f : extenal) {
+                            filePath = f.getAbsolutePath();
+                            if (filePath.contains(type)) {
+                                int endIndex = filePath.indexOf("Android");
+                                filePath = filePath.substring(0, endIndex) + split[1];
+                            }
+                        }
+                    }else{
+                        filePath = "/storage/" + type + "/" + split[1];
+                    }
+                    return filePath;
+                }
+            }
+            // DownloadsProvider
+            else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())) {
+
+                final String id = DocumentsContract.getDocumentId(uri);
+                final Uri contentUri = ContentUris.withAppendedId(
+                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
+
+                return getDataColumn(context, contentUri, null, null);
+            }
+            // MediaProvider
+            else if ("com.android.providers.media.documents".equals(uri.getAuthority())) {
+                final String docId = DocumentsContract.getDocumentId(uri);
+                final String[] split = docId.split(":");
+                final String type = split[0];
+
+                Uri contentUri = null;
+                if ("image".equals(type)) {
+                    contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                } else if ("video".equals(type)) {
+                    contentUri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+                } else if ("audio".equals(type)) {
+                    contentUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+                }
+
+                final String selection = "_id=?";
+                final String[] selectionArgs = new String[]{
+                        split[1]
+                };
+
+                Cursor cursor = null;
+                final String column = "_data";
+                final String[] projection = {
+                        column
+                };
+
+                try {
+                    cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
+                            null);
+                    if (cursor != null && cursor.moveToFirst()) {
+                        final int column_index = cursor.getColumnIndexOrThrow(column);
+                        return cursor.getString(column_index);
+                    }
+                } finally {
+                    if (cursor != null)
+                        cursor.close();
+                }
+                return null;
+            }
+        }
+        // MediaStore (and general)
+        else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            return getDataColumn(context, uri, null, null);
+        }
+        // File
+        else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            return uri.getPath();
+        }
+
+        return null;
+    }
+
+    private static String getDataColumn(Context context, Uri uri, String selection,
+                                        String[] selectionArgs) {
+
+        Cursor cursor = null;
+        final String column = "_data";
+        final String[] projection = {
+                column
+        };
+
+        try {
+            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
+                    null);
+            if (cursor != null && cursor.moveToFirst()) {
+                final int column_index = cursor.getColumnIndexOrThrow(column);
+                return cursor.getString(column_index);
+            }
+        } finally {
+            if (cursor != null)
+                cursor.close();
+        }
+        return null;
+    }
 
     @Override
     protected void onPause() {

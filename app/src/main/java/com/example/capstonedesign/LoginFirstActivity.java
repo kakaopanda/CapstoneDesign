@@ -31,7 +31,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginFirstActivity extends AppCompatActivity{
     // JAVA Object
-    public static String serverUrl = "http://192.168.35.8:8080/";
+    public static String serverUrl = "http://1.249.71.81:8080/";
     private Animation scaleAnim, rotateAnim;
     private Toast toast;
     private long backKeyPressedTime = 0;
