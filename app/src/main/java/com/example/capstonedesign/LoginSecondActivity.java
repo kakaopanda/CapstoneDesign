@@ -27,6 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginSecondActivity extends AppCompatActivity {
     // XML Object
     private ImageView signup_btn, login_btn, another_btn;
+    public static String loginId, loginPw;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -101,6 +102,8 @@ public class LoginSecondActivity extends AppCompatActivity {
                 if(response.isSuccessful()) {
                     String result = response.body();
                     if(result.equals("SUCCESS")) {
+                        loginId = id;
+                        loginPw = pw;
                         startActivity(intent);
                         Log.e("Login","onResponse: 성공, 결과: "+result.toString());
                     }

@@ -31,7 +31,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginFirstActivity extends AppCompatActivity{
     // JAVA Object
-    // [Problem] 외부망에서 내부망에 접근할때, 서버측의 적절한 포트포워딩이 필요하다.
     public static String serverUrl = "http://1.249.71.81:8080/";
     private Animation scaleAnim, rotateAnim;
     private Toast toast;
