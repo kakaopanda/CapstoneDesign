@@ -233,6 +233,8 @@ public class MainActivity extends AppCompatActivity {
                             analyze_target.setImageBitmap(bitmap);
                         }
                     }
+                    uploadImage(mCurrentPhotoPath);
+                    saveImage(loginId, mCurrentPhotoPath);
                 }
             });
 
@@ -414,9 +416,7 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
-    private static String getDataColumn(Context context, Uri uri, String selection,
-                                        String[] selectionArgs) {
-
+    private static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
         Cursor cursor = null;
         final String column = "_data";
         final String[] projection = {
