@@ -2,11 +2,14 @@ package com.example.capstonedesign;
 
 import static android.widget.Toast.makeText;
 
+import static com.example.capstonedesign.LoadingActivity.pillModel;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -36,7 +39,7 @@ public class AnalyzeActivity extends AppCompatActivity {
     private ImageView subtitute_btn, capture_btn, medicine_background1, medicine_background2, size_btn, analyze_result_box;
     private TextView name, serial, division, appearance, pharmacist, classification, ingredient;
     private TextView serial_info, division_info, appearance_info, pharmacist_info, classification_info, ingredient_info;
-    private String appearance_content, pharmacist_content, classification_content, ingredient_content;
+    private String appearance_content, pharmacist_content, classification_content, ingredient_content, name_content, serial_content;
     private String shape_content, path_content, unit_content, daily_content;
 
     @Override
@@ -163,11 +166,16 @@ public class AnalyzeActivity extends AppCompatActivity {
                     classification_info.setText(classification_content);
                     ingredient.setText("주  성  분");
                     ingredient_info.setText(ingredient_content);
-
                     status = false;
                 }
             }
         });
+        name.setText(pillModel.pill_name);
+        serial_info.setText(pillModel.pill_serial);
+        appearance_info.setText(pillModel.appearance);
+        classification_info.setText(pillModel.classify);
+        pharmacist_info.setText(pillModel.business_name);
+        division_info.setText(pillModel.is_prescription);
     }
 
     // FileProvider의 Content URI를 통해 스크린샷 이미지를 공유한다.

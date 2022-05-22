@@ -3238,6 +3238,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3376,6 +3377,7 @@ layout abc_tooltip
 layout activity_analyze
 layout activity_analyze_fail
 layout activity_intro
+layout activity_loading
 layout activity_login_first
 layout activity_login_second
 layout activity_main

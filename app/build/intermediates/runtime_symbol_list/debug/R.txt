@@ -3237,6 +3237,7 @@ int id textSpacerNoButtons 0x7f09021a
 int id textSpacerNoTitle 0x7f09021b
 int id textStart 0x7f09021c
 int id textTop 0x7f09021d
+int id textView 0x7f09024f
 int id text_input_end_icon 0x7f09021e
 int id text_input_error_icon 0x7f09021f
 int id text_input_start_icon 0x7f090220
@@ -3375,6 +3376,7 @@ int layout abc_tooltip 0x7f0c001b
 int layout activity_analyze 0x7f0c001c
 int layout activity_analyze_fail 0x7f0c001d
 int layout activity_intro 0x7f0c001e
+int layout activity_loading 0x7f0c007e
 int layout activity_login_first 0x7f0c001f
 int layout activity_login_second 0x7f0c0020
 int layout activity_main 0x7f0c0021

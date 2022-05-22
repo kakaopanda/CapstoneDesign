@@ -44,6 +44,10 @@
         "source": "C:\\Users\\lukai\\Desktop\\CapstoneDesign\\app\\src\\main\\res\\drawable\\pill2.png"
     },
     {
+        "merged": "C:\\Users\\lukai\\Desktop\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_loading.xml.flat",
+        "source": "C:\\Users\\lukai\\Desktop\\CapstoneDesign\\app\\src\\main\\res\\layout\\activity_loading.xml"
+    },
+    {
         "merged": "C:\\Users\\lukai\\Desktop\\CapstoneDesign\\app\\build\\intermediates\\merged_res\\debug\\drawable_login_btn_renewal.png.flat",
         "source": "C:\\Users\\lukai\\Desktop\\CapstoneDesign\\app\\src\\main\\res\\drawable\\login_btn_renewal.png"
     },

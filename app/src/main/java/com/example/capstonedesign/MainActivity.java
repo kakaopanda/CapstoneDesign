@@ -43,6 +43,9 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -63,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     private Toast toast;
     private String mCurrentPhotoPath;
     private long backKeyPressedTime = 0;
+    public static String filePath;
 
     // XML Object
     private ImageView analyze_target, upload_btn, camera_btn;
@@ -80,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         upload_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AnalyzeActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoadingActivity.class);
                 startActivity(intent);
             }
         });
@@ -233,8 +237,11 @@ public class MainActivity extends AppCompatActivity {
                             analyze_target.setImageBitmap(bitmap);
                         }
                     }
-                    uploadImage(mCurrentPhotoPath);
-                    saveImage(loginId, mCurrentPhotoPath);
+                    filePath = mCurrentPhotoPath;
+                    UploadImage uploadImage = new UploadImage(filePath);
+                    uploadImage.start();
+                    SaveImage saveImage = new SaveImage(loginId, filePath);
+                    saveImage.start();
                 }
             });
 
@@ -255,70 +262,14 @@ public class MainActivity extends AppCompatActivity {
                         analyze_target.setImageURI(uri);
                         Log.e(TAG, "PATH: " + getFullPathFromContentUri(getApplicationContext(), uri));
                         String path = getFullPathFromContentUri(getApplicationContext(), uri);
-                        uploadImage(path);
-                        saveImage(loginId, path);
+                        filePath = path;
+                        UploadImage uploadImage = new UploadImage(filePath);
+                        uploadImage.start();
+                        SaveImage saveImage = new SaveImage(loginId, filePath);
+                        saveImage.start();
                     }
                 }
             });
-
-    // 경로로 주어진 이미지 서버로 전송
-    private void uploadImage(String path) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(serverUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        File file = new File(path);
-        ImgUploadService service = retrofit.create(ImgUploadService.class);
-
-        RequestBody requestFile = RequestBody.create(MediaType.parse("jpg"), file);
-        MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
-
-        String descriptionString = "hello, this is description speaking";
-        RequestBody description = RequestBody.create(okhttp3.MultipartBody.FORM, descriptionString);
-
-        Call<ResponseBody> call = service.upload(description, body);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Log.d("Upload", "success");
-            }
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.d("Upload error:", t.getMessage());
-            }
-        });
-    }
-
-    // 이미지 정보 데이터베이스 저장
-    private void saveImage(String id, String path) {
-        Gson gson = new GsonBuilder().setLenient().create();
-        String filename = new File(path).getName();
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(serverUrl)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-        ImgInfoService service = retrofit.create(ImgInfoService.class);
-
-        Call<String> call = service.upload(id, filename);
-        call.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                if(response.isSuccessful()) {
-                    String result = response.body();
-                    Log.e("Image","onResponse: 성공, 결과: "+result.toString());
-                }
-                else {
-                    Log.e("Image", "onResponse: 실패" );
-                }
-            }
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Log.e("Image", "onFailure " + t.getMessage());
-            }
-        });
-    }
 
     // URI에서 파일 절대경로 추출
     public static String getFullPathFromContentUri(final Context context, final Uri uri) {

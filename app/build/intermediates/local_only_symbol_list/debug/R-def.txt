@@ -251,10 +251,12 @@ id subtitute_btn
 id tab_home
 id tab_setting
 id tab_user
+id textView
 id upload_btn
 layout activity_analyze
 layout activity_analyze_fail
 layout activity_intro
+layout activity_loading
 layout activity_login_first
 layout activity_login_second
 layout activity_main
