@@ -86,8 +86,8 @@ public class LoginSecondActivity extends AppCompatActivity {
         String pw = pwText.getText().toString();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         Gson gson = new GsonBuilder().setLenient().create();
-        Toast failedToast = Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_LONG);
-        Toast serverErrorToast = Toast.makeText(getApplicationContext(), "서버 오류", Toast.LENGTH_LONG);
+        Toast failedToast = Toast.makeText(getApplicationContext(), "이메일이나 비밀번호가 잘못되었습니다.", Toast.LENGTH_LONG);
+        Toast serverErrorToast = Toast.makeText(getApplicationContext(), "서버가 응답하지 않습니다.", Toast.LENGTH_LONG);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(serverUrl)
@@ -105,12 +105,12 @@ public class LoginSecondActivity extends AppCompatActivity {
                         loginId = id;
                         loginPw = pw;
                         startActivity(intent);
-                        Log.e("Login","onResponse: 성공, 결과: "+result.toString());
+                        Log.e("Login","onResponse: 성공, 결과: " + result);
                     }
                     else {failedToast.show();}
                 }
                 else {
-                    failedToast.show();
+                    serverErrorToast.show();
                     Log.e("Login", "onResponse: 실패");
                 }
             }

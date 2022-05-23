@@ -24,7 +24,7 @@
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="@font/nanumgothicextrabold"
@@ -33,14 +33,16 @@
         android:shadowDy="5.0"
         android:shadowRadius="7.0"
         android:text="수로신디정"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
+        android:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.062"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/medicine_background1"
@@ -129,7 +131,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.425"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/serial"
@@ -150,7 +152,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.48"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/serial_info"
@@ -167,7 +169,7 @@
         app:layout_constraintStart_toEndOf="@+id/serial"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.48"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/division"
@@ -188,7 +190,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/serial"
         app:layout_constraintVertical_bias="0.038"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/division_info"
@@ -205,7 +207,7 @@
         app:layout_constraintStart_toEndOf="@+id/division"
         app:layout_constraintTop_toBottomOf="@+id/serial_info"
         app:layout_constraintVertical_bias="0.037"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/appearance"
@@ -227,7 +229,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/division"
         app:layout_constraintVertical_bias="0.038"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/appearance_info"
@@ -244,7 +246,7 @@
         app:layout_constraintStart_toEndOf="@+id/appearance"
         app:layout_constraintTop_toBottomOf="@+id/division_info"
         app:layout_constraintVertical_bias="0.038"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/pharmacist"
@@ -266,7 +268,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appearance"
         app:layout_constraintVertical_bias="0.048"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/pharmacist_info"
@@ -283,7 +285,7 @@
         app:layout_constraintStart_toEndOf="@+id/pharmacist"
         app:layout_constraintTop_toBottomOf="@+id/appearance_info"
         app:layout_constraintVertical_bias="0.049"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/classification"
@@ -305,7 +307,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pharmacist"
         app:layout_constraintVertical_bias="0.048"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/classification_info"
@@ -322,7 +324,7 @@
         app:layout_constraintStart_toEndOf="@+id/classification"
         app:layout_constraintTop_toBottomOf="@+id/pharmacist_info"
         app:layout_constraintVertical_bias="0.047"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/ingredient"
@@ -343,7 +345,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/classification_info"
         app:layout_constraintVertical_bias="0.058"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/ingredient_info"
@@ -360,7 +362,7 @@
         app:layout_constraintStart_toEndOf="@+id/ingredient"
         app:layout_constraintTop_toBottomOf="@+id/classification_info"
         app:layout_constraintVertical_bias="0.06"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/capture_btn"

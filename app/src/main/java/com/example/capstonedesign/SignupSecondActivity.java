@@ -51,8 +51,8 @@ public class SignupSecondActivity extends AppCompatActivity {
                     signup();
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "회원가입 실패", Toast.LENGTH_SHORT).show();
-                    Log.e("code", "signupCode: " +signupCode);
+                    Toast.makeText(getApplicationContext(), "인증코드가 틀렸습니다.", Toast.LENGTH_SHORT).show();
+                    Log.e("code", "Code: " + signupCode);
                 }
             }
         });
@@ -63,7 +63,7 @@ public class SignupSecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mailResend(signupId, signupCode);
-                Toast.makeText(getApplicationContext(), "메일 재전송 완료", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "인즏코드 메일이 재전송 되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -71,7 +71,6 @@ public class SignupSecondActivity extends AppCompatActivity {
     // 회원가입
     public void signup() {
         Gson gson = new GsonBuilder().setLenient().create();
-        Toast failedToast = Toast.makeText(getApplicationContext(), "SIGNUP FAILED", Toast.LENGTH_LONG);
         Intent intent = new Intent(getApplicationContext(), SignupThirdActivity.class);
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -86,17 +85,23 @@ public class SignupSecondActivity extends AppCompatActivity {
             public void onResponse(Call<String> call, Response<String> response) {
                 if (response.isSuccessful()) {
                     String result = response.body();
-                    if (result.equals("SUCCESS")) {startActivity(intent);}
-                    else {failedToast.show();}
+                    if (result.equals("SUCCESS")) {
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "사용할 수 없는 이메일입니다.", Toast.LENGTH_LONG).show();
+                        finish();
+                    }
                     Log.e("Login","onResponse: 성공, 결과: " + result.toString());
                 }
                 else {
-                    failedToast.show();
+                    Toast.makeText(getApplicationContext(), "서버가 응답하지 않습니다.", Toast.LENGTH_LONG).show();
                     Log.e("Login", "onResponse: 실패");
                 }
             }
             @Override
             public void onFailure(Call<String> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "서버가 응답하지 않습니다.", Toast.LENGTH_LONG).show();
                 Log.e("Login", "onFailure " + t.getMessage());
             }
         });
@@ -106,12 +111,12 @@ public class SignupSecondActivity extends AppCompatActivity {
     public void mailResend(String id, String code) {
         try {
             GMailSender sender = new GMailSender("lukai7501@gmail.com", "nktfhnxrbqmqewzt");
-            sender.sendMail("[Search Pill] EMAIL CONFIRM CODE",
-                    "The code is " + code,
-                    "lukai7501@gmail.com",
+            sender.sendMail("[Search Pill] 이메일 인증 코드입니다.",
+                    "이메일 인증코드는 [" + code + "]입니다.\n어플리케이션 화면에 4자리를 입력해주세요.",
+                    "SearchPill@noreply.com",
                     id);
         } catch (Exception e) {
-            Log.e("mail", "mail error " + e.getMessage() + " code: " + code);
+            Log.e("mail", "Mail error " + e.getMessage() + "\nCode: " + code);
         }
     }
 

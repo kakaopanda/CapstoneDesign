@@ -50,7 +50,7 @@ public class SignupFirstActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), SignupSecondActivity.class);
                     startActivity(intent);
                 } else{
-                    Toast.makeText(getApplicationContext(),"비밀번호가 다릅니다.",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"비밀번호가 비밀번호 확인란과 일치하지 않습니다.",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -67,12 +67,12 @@ public class SignupFirstActivity extends AppCompatActivity {
         signupCode = code;
         try {
             GMailSender sender = new GMailSender("lukai7501@gmail.com", "nktfhnxrbqmqewzt");
-            sender.sendMail("[Search Pill] EMAIL CONFIRM CODE",
-                    "The code is " + code,
-                    "lukai7501@gmail.com",
+            sender.sendMail("[Search Pill] 이메일 인증 코드입니다.",
+                    "이메일 인증코드는 [" + code + "]입니다.\n어플리케이션 화면에 4자리를 입력해주세요.",
+                    "SearchPill@noreply.com",
                     id);
         } catch (Exception e) {
-            Log.e("mail", "mail error " + e.getMessage() + " code: " + code);
+            Log.e("mail", "Mail error " + e.getMessage() + "\nCode: " + code);
         }
     }
 
@@ -86,4 +86,5 @@ public class SignupFirstActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.parseColor("#FF1073B4"));
         getWindow().setNavigationBarColor(Color.parseColor("#FF1073B4"));
     }
+
 }

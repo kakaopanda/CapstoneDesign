@@ -46,6 +46,7 @@
         <activity android:name="com.example.capstonedesign.SubstituteActivity" />
         <activity android:name="com.example.capstonedesign.AnalyzeFailActivity" />
         <activity android:name="com.example.capstonedesign.SubFailActivity" />
+        <activity android:name="com.example.capstonedesign.LoadingActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
