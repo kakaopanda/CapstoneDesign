@@ -130,9 +130,4 @@ public class SignupSecondActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.parseColor("#FF1073B4"));
         getWindow().setNavigationBarColor(Color.parseColor("#FF1073B4"));
     }
-
-    @Override
-    public void onBackPressed() {
-        //super.onBackPressed();
-    }
 }

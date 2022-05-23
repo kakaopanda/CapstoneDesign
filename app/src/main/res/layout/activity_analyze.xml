@@ -24,8 +24,8 @@
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
         android:layout_gravity="center"
         android:fontFamily="@font/nanumgothicextrabold"
         android:shadowColor="#44000000"
@@ -37,6 +37,9 @@
         android:textColor="#FFFFFF"
         android:textSize="25dp"
         android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeMaxTextSize="25dp"
+        android:autoSizeStepGranularity="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
