@@ -4,6 +4,7 @@ import static com.example.capstonedesign.LoginSecondActivity.loginId;
 import static com.example.capstonedesign.MainActivity.filePath;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -18,6 +19,7 @@ import java.util.concurrent.Future;
 public class LoadingActivity extends AppCompatActivity {
     private ExecutorService executorService = Executors.newFixedThreadPool(2);
     public static PillModel pillModel;
+    public static Bitmap pillBitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +38,25 @@ public class LoadingActivity extends AppCompatActivity {
             public void run() {
                 try {
                     pillModel = pillModelFuture.get();
-                    startActivity(new Intent(getApplicationContext(), AnalyzeActivity.class));
+                    downloadImage();
                 } catch(Exception e) {
                     Log.e("Call", e.toString());
+                }
+            }
+        });
+    }
+
+    public void downloadImage() {
+        Callable<Bitmap> cb = new DownloadImage(pillModel.pill_serial);
+        Future<Bitmap> future = executorService.submit(cb);
+        executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    pillBitmap = future.get();
+                    startActivity(new Intent(getApplicationContext(), AnalyzeActivity.class));
+                } catch (Exception e) {
+                    Log.e("Download Image", e.toString());
                 }
             }
         });

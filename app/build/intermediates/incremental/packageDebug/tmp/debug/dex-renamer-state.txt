@@ -1,4 +1,4 @@
-#Tue May 24 01:35:52 KST 2022
+#Wed May 25 00:24:30 KST 2022
 base.2=C\:\\Users\\lukai\\Desktop\\CapstoneDesign\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
 path.2=7/classes.dex
 base.1=C\:\\Users\\lukai\\Desktop\\CapstoneDesign\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
