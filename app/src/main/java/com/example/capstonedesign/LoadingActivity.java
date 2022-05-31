@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class LoadingActivity extends AppCompatActivity {
-    private ExecutorService executorService = Executors.newFixedThreadPool(2);
+    private ExecutorService executorService = Executors.newFixedThreadPool(5);
     public static PillModel pillModel;
     public static Bitmap pillBitmap;
 
@@ -27,36 +27,36 @@ public class LoadingActivity extends AppCompatActivity {
         actionBar.hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
-        getPill();
+        load();
     }
 
-    public void getPill() {
-        Callable cb = new AnalyzeImage(loginId, filePath);
-        Future<PillModel> pillModelFuture = executorService.submit(cb);
+    public void load() {
         executorService.submit(new Runnable() {
             @Override
             public void run() {
                 try {
+                    // 이미지 정보(ID, 파일 경로) 데이터베이스에 저장
+                    Callable<String> saveImageInfo = new SaveImageInfo(loginId, filePath);
+                    Future<String> siFuture = executorService.submit(saveImageInfo);
+                    siFuture.get();
+                    // 이미지 파일 서버로 업로드
+                    Callable<String> uploadImage = new UploadImage(filePath);
+                    Future<String> uiFuture = executorService.submit(uploadImage);
+                    uiFuture.get();
+                    // 이미지 분석
+                    Callable<PillModel> analyzeImage = new AnalyzeImage(loginId, filePath);
+                    Future<PillModel> pillModelFuture = executorService.submit(analyzeImage);
                     pillModel = pillModelFuture.get();
-                    downloadImage();
-                } catch(Exception e) {
-                    Log.e("Call", e.toString());
-                }
-            }
-        });
-    }
-
-    public void downloadImage() {
-        Callable<Bitmap> cb = new DownloadImage(pillModel.pill_serial);
-        Future<Bitmap> future = executorService.submit(cb);
-        executorService.submit(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    pillBitmap = future.get();
+                    // 분석 결과에 맞는 알약의 이미지를 비트맵 형태로 다운로드
+                    Callable<Bitmap> downloadImage = new DownloadImage(pillModel.pill_serial);
+                    Future<Bitmap> dlFuture = executorService.submit(downloadImage);
+                    pillBitmap = dlFuture.get();
+                    // 모든 작업이 성공적으로 끝날 경우 다음 화면으로 전환
                     startActivity(new Intent(getApplicationContext(), AnalyzeActivity.class));
-                } catch (Exception e) {
-                    Log.e("Download Image", e.toString());
+                } catch(Exception e) {
+                    // 분석이 실패할 경우 실패 화면으로 전환
+                    startActivity(new Intent(getApplicationContext(), AnalyzeFailActivity.class));
+                    Log.e("Call", e.toString());
                 }
             }
         });

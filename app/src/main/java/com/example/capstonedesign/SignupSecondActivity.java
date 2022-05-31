@@ -1,6 +1,6 @@
 package com.example.capstonedesign;
 
-import static com.example.capstonedesign.LoginFirstActivity.serverUrl;
+import static com.example.capstonedesign.LoginSecondActivity.serverUrl;
 import static com.example.capstonedesign.SignupFirstActivity.signupCode;
 import static com.example.capstonedesign.SignupFirstActivity.signupId;
 import static com.example.capstonedesign.SignupFirstActivity.signupPw;
@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -22,6 +21,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -31,6 +35,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SignupSecondActivity extends AppCompatActivity {
     // XML Object
     private ImageView submit_btn;
+    private ExecutorService executorService;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,13 +45,14 @@ public class SignupSecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_second);
 
+        // 인증 코드 제출하기 버튼
         submit_btn = findViewById(R.id.submit_btn);
         submit_btn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 EditText codeText = (EditText) findViewById(R.id.input_box_edit);
                 String code = codeText.getText().toString();
+                // 인증 코드가 일치하면 회원가입 진행
                 if(code.equals(signupCode)) {
                     signup();
                 }
@@ -62,8 +68,21 @@ public class SignupSecondActivity extends AppCompatActivity {
         resend_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mailResend(signupId, signupCode);
-                Toast.makeText(getApplicationContext(), "인즏코드 메일이 재전송 되었습니다.", Toast.LENGTH_SHORT).show();
+                executorService = Executors.newFixedThreadPool(2);
+                SendMails resendMails = new SendMails(signupId);
+                resendMails.setCode(signupCode);
+                executorService.submit(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Future<String> future = executorService.submit(resendMails);
+                            future.get();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                Toast.makeText(getApplicationContext(), "인증코드 메일이 재전송 되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -105,19 +124,6 @@ public class SignupSecondActivity extends AppCompatActivity {
                 Log.e("Login", "onFailure " + t.getMessage());
             }
         });
-    }
-
-    // 인증번호 재전송
-    public void mailResend(String id, String code) {
-        try {
-            GMailSender sender = new GMailSender("lukai7501@gmail.com", "nktfhnxrbqmqewzt");
-            sender.sendMail("[Search Pill] 이메일 인증 코드입니다.",
-                    "이메일 인증코드는 [" + code + "]입니다.\n어플리케이션 화면에 4자리를 입력해주세요.",
-                    "SearchPill@noreply.com",
-                    id);
-        } catch (Exception e) {
-            Log.e("mail", "Mail error " + e.getMessage() + "\nCode: " + code);
-        }
     }
 
     @Override

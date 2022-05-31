@@ -1,10 +1,9 @@
 package com.example.capstonedesign;
 
-import static com.example.capstonedesign.LoginFirstActivity.serverUrl;
+import static com.example.capstonedesign.LoginSecondActivity.serverUrl;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.widget.ImageView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.Callable;
 
-// 분석 결과에 맞는 알약 이미지를 화면에 출력한다.
+// 분석 결과에 맞는 알약의 이미지를 비트맵 형태로 다운로드
 public class DownloadImage implements Callable<Bitmap> {
     String filename;
     Bitmap bitmap;

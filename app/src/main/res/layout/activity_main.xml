@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.068"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/quantity"
@@ -39,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.11"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/main_subscription2"
@@ -56,7 +56,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.125"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/main_subscription3"
@@ -73,7 +73,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.202"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/main_subscription4"
@@ -90,7 +90,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.235"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/analyze_target"
@@ -195,7 +195,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.705"
-        tools:ignore="MissingConstraints"></TextView>
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/camera_btn"

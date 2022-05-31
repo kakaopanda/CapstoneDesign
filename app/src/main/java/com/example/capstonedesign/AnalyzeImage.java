@@ -1,8 +1,6 @@
 package com.example.capstonedesign;
 
-import static com.example.capstonedesign.LoginFirstActivity.serverUrl;
-
-import android.util.Log;
+import static com.example.capstonedesign.LoginSecondActivity.serverUrl;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -13,11 +11,11 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+// 이미지 분석
 public class AnalyzeImage implements Callable<PillModel> {
     private String id;
     private String path;

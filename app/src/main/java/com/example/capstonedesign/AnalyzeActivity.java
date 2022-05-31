@@ -4,6 +4,8 @@ import static android.widget.Toast.makeText;
 
 import static com.example.capstonedesign.LoadingActivity.pillBitmap;
 import static com.example.capstonedesign.LoadingActivity.pillModel;
+import static com.example.capstonedesign.TextAnalyzeActivity.textPillBitmap;
+import static com.example.capstonedesign.TextAnalyzeActivity.textPillModel;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -136,14 +138,27 @@ public class AnalyzeActivity extends AppCompatActivity {
                 makeText(getApplicationContext(), "글자 크기를 "+textPhase+"단계로 변경합니다.",Toast.LENGTH_SHORT).show();
             }
         });
-        name.setText(pillModel.pill_name);
-        serial_info.setText(pillModel.pill_serial);
-        appearance_info.setText(pillModel.appearance);
-        classification_info.setText(pillModel.classify);
-        pharmacist_info.setText(pillModel.business_name);
-        division_info.setText(pillModel.is_prescription);
 
-        medicine_front.setImageBitmap(pillBitmap);
+        // 이미지로 분석한 경우
+        if (pillModel != null) {
+            name.setText(pillModel.pill_name);
+            serial_info.setText(pillModel.pill_serial);
+            appearance_info.setText(pillModel.appearance);
+            classification_info.setText(pillModel.classify);
+            pharmacist_info.setText(pillModel.business_name);
+            division_info.setText(pillModel.is_prescription);
+            medicine_front.setImageBitmap(pillBitmap);
+        }
+        // 유저가 텍스트로 직접 입력하여 분석한 경우
+        else {
+            name.setText(textPillModel.pill_name);
+            serial_info.setText(textPillModel.pill_serial);
+            appearance_info.setText(textPillModel.appearance);
+            classification_info.setText(textPillModel.classify);
+            pharmacist_info.setText(textPillModel.business_name);
+            division_info.setText(textPillModel.is_prescription);
+            medicine_front.setImageBitmap(textPillBitmap);
+        }
 
         rotateAnim = AnimationUtils.loadAnimation(this, R.anim.rotate2);
         size_btn.setAnimation(rotateAnim);

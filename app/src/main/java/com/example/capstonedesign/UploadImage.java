@@ -1,10 +1,13 @@
 package com.example.capstonedesign;
 
-import static com.example.capstonedesign.LoginFirstActivity.serverUrl;
+import static com.example.capstonedesign.LoginSecondActivity.serverUrl;
 
 import android.util.Log;
 
+import com.bumptech.glide.util.ExceptionCatchingInputStream;
+
 import java.io.File;
+import java.util.concurrent.Callable;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -16,19 +19,15 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-// 경로로 주어진 이미지 서버로 전송
-public class UploadImage extends Thread{
+// 이미지 파일 서버로 업로드
+public class UploadImage implements Callable<String> {
     String path;
 
     public UploadImage(String path) {
         this.path = path;
     }
 
-    public void run() {
-        uploadImage();
-    }
-
-    private void uploadImage() {
+    public String call() throws Exception{
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(serverUrl)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -44,15 +43,8 @@ public class UploadImage extends Thread{
         RequestBody description = RequestBody.create(okhttp3.MultipartBody.FORM, descriptionString);
 
         Call<ResponseBody> call = service.upload(description, body);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Log.d("Upload", "success");
-            }
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.d("Upload error:", t.getMessage());
-            }
-        });
+        Response<ResponseBody> response = call.execute();
+
+        return response.body().toString();
     }
 }
