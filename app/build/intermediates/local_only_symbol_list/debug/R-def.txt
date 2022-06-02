@@ -127,6 +127,7 @@ drawable subtitute_btn_another
 drawable table
 drawable table2
 drawable table_edit
+drawable text_analyze_btn
 drawable title_left
 drawable title_right
 drawable upload
@@ -167,6 +168,9 @@ id check_second
 id check_third
 id classification
 id classification_info
+id color_input_box
+id color_spinner
+id color_text
 id division
 id division_info
 id email
@@ -221,6 +225,10 @@ id reanalyze_btn
 id resend_btn
 id serial
 id serial_info
+id shape_input_box
+id shape_input_edit
+id shape_spinner
+id shape_text
 id signup_btn
 id signup_first_subscription1
 id signup_first_subscription2
@@ -252,6 +260,12 @@ id tab_home
 id tab_setting
 id tab_user
 id textView
+id text_analyze_btn
+id text_analyze_title
+id text_input_box
+id text_input_edit
+id text_submit_btn
+id text_text
 id upload_btn
 layout activity_analyze
 layout activity_analyze_fail
@@ -265,6 +279,7 @@ layout activity_signup_second
 layout activity_signup_third
 layout activity_substitution
 layout activity_substitution_fail
+layout activity_text_analyze
 menu bottom_menu
 mipmap ic_launcher
 mipmap ic_launcher_background

@@ -44,8 +44,8 @@ public class TextAnalyzeActivity extends AppCompatActivity {
         EditText textTextView;
         Spinner colorSpinner, shapeSpinner;
         ImageView submitBtn = findViewById(R.id.text_submit_btn);
-        String[] colorItems = {"하양", "갈색", "검정", "남색", "노랑", "보라", "분홍", "빨강", "연두", "자주", "주황", "청록", "초록", "파랑", "회색"};
-        String[] shapeItems = {"장방형", "원형", "타원형", "반원형", "마름모형", "삼각형", "사각형", "오각형", "육각형", "팔각형"};
+        String[] colorItems = {"하양", "검정", "노랑", "빨강", "초록", "파랑"};
+        String[] shapeItems = {"장방형", "원형", "타원형", "사각형", "팔각형"};
 
         textTextView = findViewById(R.id.text_input_edit);
         colorSpinner = findViewById(R.id.color_spinner);
