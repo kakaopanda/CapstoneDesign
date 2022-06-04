@@ -1,25 +1,21 @@
 package com.example.capstonedesign;
 
-import static com.example.capstonedesign.LoginSecondActivity.loginId;
-import static com.example.capstonedesign.MainActivity.filePath;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationManagerCompat;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -29,6 +25,7 @@ import java.util.concurrent.Future;
 public class TextAnalyzeActivity extends AppCompatActivity {
     public static PillModel textPillModel;
     public static Bitmap textPillBitmap;
+    public static ComponentModel textComponentModel;
     private String colorText = "하양";
     private String shapeText = "장방형";
     private ExecutorService executorService = Executors.newFixedThreadPool(3);
@@ -100,10 +97,17 @@ public class TextAnalyzeActivity extends AppCompatActivity {
                                 Callable<Bitmap> downloadImage = new DownloadImage(textPillModel.pill_serial);
                                 Future<Bitmap> dlFuture = executorService.submit(downloadImage);
                                 textPillBitmap = dlFuture.get();
+                                // 주성분 정보 받아오기
+                                if(textPillModel.component != null) {
+                                    Callable<ComponentModel> getComponent = new GetComponent(textPillModel.component);
+                                    Future<ComponentModel> cpFuture = executorService.submit(getComponent);
+                                    textComponentModel = cpFuture.get();
+                                }
                                 // 모든 작업이 성공적으로 끝날 경우 다음 화면으로 전환
                                 startActivity(new Intent(getApplicationContext(), AnalyzeActivity.class));
                             } catch(Exception e) {
                                 // 분석이 실패할 경우 토스트메시지 출력
+                                Log.e("Component","Component error: " + e.toString());
                                 analyzeFailedToast.show();
                             }
                         }
