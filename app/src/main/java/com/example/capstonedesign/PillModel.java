@@ -7,8 +7,13 @@ public class PillModel {
     public String appearance;
     public String business_name;
     public String classify;
+    public String component;
+
+    public PillModel() {
+        component = "";
+    }
 
     public String toString() {
-        return pill_name + pill_serial + is_prescription + appearance + business_name + classify;
+        return pill_name + pill_serial + is_prescription + appearance + business_name + classify + component;
     }
 }
