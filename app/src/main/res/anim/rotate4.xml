@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="1.0"
+        android:toAlpha="0.9"
+        android:repeatMode = "reverse"
+        android:repeatCount="infinite" />
+    <rotate xmlns:android="http://schemas.android.com/apk/res/android"
+        android:interpolator="@android:anim/bounce_interpolator"
+        android:duration="1000"
+        android:pivotX="100%"
+        android:pivotY="100%"
+        android:fromDegrees="-20"
+        android:toDegrees="5"
+        android:repeatMode = "reverse"
+        android:repeatCount="infinite"
+        />
+</set>

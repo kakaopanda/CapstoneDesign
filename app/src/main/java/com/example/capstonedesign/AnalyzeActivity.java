@@ -151,7 +151,7 @@ public class AnalyzeActivity extends AppCompatActivity {
                         infoFlag = false;
                     } else {
                         // 현재 출력된 정보가 의약품 분석결과 중 일련번호, 구분, 성상, 투여경로, 투여단위, 1일 최대투여량을 제시하는 경우
-                        serial_text.setText("일렬번호");
+                        serial_text.setText("일련번호");
                         division_text.setText("구        분");
                         appearance_text.setText("성        상");
                         business_name_text.setText("제  약  사");
