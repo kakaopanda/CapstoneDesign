@@ -98,10 +98,10 @@
         android:src="@drawable/box17"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.682"
+        app:layout_constraintVertical_bias="0.691"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -213,7 +213,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/appearance"
+        android:id="@+id/ingredient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -223,7 +223,7 @@
         android:shadowDx="7.0"
         android:shadowDy="7.0"
         android:shadowRadius="3.0"
-        android:text="성        상"
+        android:text="주  성  분"
         android:textColor="#FFFFFF"
         android:textSize="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -235,18 +235,18 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/appearance_info"
+        android:id="@+id/ingredient_info"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_gravity=""
         android:fontFamily="@font/bold"
-        android:text="흰색의 원형 정제"
+        android:text="정보 없음"
         android:textColor="#FFFFFF"
         android:textSize="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.431"
-        app:layout_constraintStart_toEndOf="@+id/appearance"
+        app:layout_constraintStart_toEndOf="@+id/ingredient"
         app:layout_constraintTop_toBottomOf="@+id/division_info"
         app:layout_constraintVertical_bias="0.038"
         tools:ignore="MissingConstraints" />
@@ -269,7 +269,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appearance"
+        app:layout_constraintTop_toBottomOf="@+id/ingredient"
         app:layout_constraintVertical_bias="0.048"
         tools:ignore="MissingConstraints" />
 
@@ -286,7 +286,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toEndOf="@+id/pharmacist"
-        app:layout_constraintTop_toBottomOf="@+id/appearance_info"
+        app:layout_constraintTop_toBottomOf="@+id/ingredient_info"
         app:layout_constraintVertical_bias="0.049"
         tools:ignore="MissingConstraints" />
 
@@ -330,7 +330,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/ingredient"
+        android:id="@+id/appearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -339,30 +339,30 @@
         android:shadowDx="7.0"
         android:shadowDy="7.0"
         android:shadowRadius="3.0"
-        android:text="주  성  분"
+        android:text="성        상"
         android:textColor="#FFFFFF"
         android:textSize="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classification_info"
+        app:layout_constraintTop_toBottomOf="@+id/classification"
         app:layout_constraintVertical_bias="0.058"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/ingredient_info"
+        android:id="@+id/appearance_info"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_gravity=""
         android:fontFamily="@font/bold"
-        android:text="정보 없음"
+        android:text="흰색의 원형 정제"
         android:textColor="#FFFFFF"
         android:textSize="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.431"
-        app:layout_constraintStart_toEndOf="@+id/ingredient"
+        app:layout_constraintStart_toEndOf="@+id/appearance"
         app:layout_constraintTop_toBottomOf="@+id/classification_info"
         app:layout_constraintVertical_bias="0.06"
         tools:ignore="MissingConstraints" />

@@ -25,9 +25,9 @@ public class GetComponent implements Callable<ComponentModel> {
 
     public ComponentModel call() throws Exception {
         OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
-                .connectTimeout(30, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS)
-                .writeTimeout(30, TimeUnit.SECONDS)
+                .connectTimeout(300, TimeUnit.SECONDS)
+                .readTimeout(300, TimeUnit.SECONDS)
+                .writeTimeout(300, TimeUnit.SECONDS)
                 .build();
 
         Gson gson = new GsonBuilder().setLenient().create();

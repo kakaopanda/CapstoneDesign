@@ -71,14 +71,14 @@ public class AnalyzeActivity extends AppCompatActivity {
         serial_info = findViewById(R.id.serial_info);
         division_text = findViewById(R.id.division);
         division_info = findViewById(R.id.division_info);
-        appearance_text = findViewById(R.id.appearance);
-        appearance_info = findViewById(R.id.appearance_info);
         business_name_text = findViewById(R.id.pharmacist);
         business_name_info = findViewById(R.id.pharmacist_info);
         classification_text = findViewById(R.id.classification);
         classification_info = findViewById(R.id.classification_info);
         component_text = findViewById(R.id.ingredient);
         component_info = findViewById(R.id.ingredient_info);
+        appearance_text = findViewById(R.id.appearance);
+        appearance_info = findViewById(R.id.appearance_info);
 
         // 이미지로 분석한 경우
         if (pillModel != null) {
@@ -138,31 +138,31 @@ public class AnalyzeActivity extends AppCompatActivity {
                         // 현재 출력된 정보가 의약품 분석결과 중 일련번호, 구분, 성상, 제약사, 분류명, 주성분을 제시하는 경우
                         serial_text.setText("성분코드");
                         division_text.setText("성  분  명");
-                        appearance_text.setText("제  형  명");
+                        component_text.setText("제  형  명");
+                        appearance_text.setText("일투여량");
                         business_name_text.setText("투여경로");
                         classification_text.setText("투여단위");
-                        component_text.setText("일투여량");
                         serial_info.setText(component_code);
                         division_info.setText(component_name);
-                        appearance_info.setText(type_name);
+                        component_info.setText(type_name);
                         business_name_info.setText(injection_root);
                         classification_info.setText(injection_unit);
-                        component_info.setText(injection_day);
+                        appearance_info.setText(injection_day);
                         infoFlag = false;
                     } else {
                         // 현재 출력된 정보가 의약품 분석결과 중 일련번호, 구분, 성상, 투여경로, 투여단위, 1일 최대투여량을 제시하는 경우
                         serial_text.setText("일련번호");
                         division_text.setText("구        분");
-                        appearance_text.setText("성        상");
+                        component_text.setText("주  성  분");
                         business_name_text.setText("제  약  사");
                         classification_text.setText("분  류  명");
-                        component_text.setText("주  성  분");
+                        appearance_text.setText("성        상");
                         serial_info.setText(serial);
-                        appearance_info.setText(appearance);
+                        component_info.setText(component_name);
                         classification_info.setText(classification);
                         business_name_info.setText(business_name);
                         division_info.setText(division);
-                        component_info.setText(component_name);
+                        appearance_info.setText(appearance);
                         infoFlag = true;
                     }
                 } else {

@@ -6,7 +6,7 @@
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/drawable-v24/progress.xml" value="0.363" />
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/font/font.xml" value="0.17604166666666668" />
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_after_login.xml" value="0.14583333333333334" />
-        <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_analyze.xml" value="0.4" />
+        <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_analyze.xml" value="0.264" />
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_analyze_fail.xml" value="0.264" />
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_analyze_temp.xml" value="0.4635416666666667" />
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_analyze_temps.xml" value="0.24409722222222222" />
@@ -23,7 +23,7 @@
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_substitution.xml" value="0.2" />
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_substitution_fail.xml" value="0.536" />
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_substitution_temp.xml" value="0.4" />
-        <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_text_analyze.xml" value="0.2598958333333333" />
+        <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/activity_text_analyze.xml" value="0.264" />
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/first_step.xml" value="0.29739583333333336" />
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/fragment_home.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/kakao/AndroidStudioProjects/CapstoneDesign/app/src/main/res/layout/intro_activity.xml" value="0.29739583333333336" />
