@@ -31,6 +31,8 @@
         <activity android:name=".SubstituteActivity"/>
         <activity android:name=".AnalyzeFailActivity"/>
         <activity android:name=".SubFailActivity"/>
+        <activity android:name=".LoadingActivity"/>
+        <activity android:name=".TextAnalyzeActivity"/>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.capstonedesign.fileprovider"

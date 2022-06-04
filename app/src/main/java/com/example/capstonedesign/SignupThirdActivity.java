@@ -23,6 +23,7 @@ public class SignupThirdActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_third);
 
+        // 로그인 화면으로 돌아가기 버튼
         submit_btn = findViewById(R.id.submit_btn);
         submit_btn.setOnClickListener(new View.OnClickListener() {
             @Override

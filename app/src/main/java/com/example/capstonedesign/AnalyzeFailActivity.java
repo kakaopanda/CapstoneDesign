@@ -14,11 +14,10 @@ import androidx.core.app.NotificationManagerCompat;
 
 public class AnalyzeFailActivity extends AppCompatActivity {
     // JAVA Object
-    private Toast toast;
     private long backKeyPressedTime = 0;
 
     // XML Object
-    private ImageView reanalyze_btn;
+    private ImageView user_analyze_btn, reanalyze_btn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,12 +27,21 @@ public class AnalyzeFailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analyze_fail);
 
+        // 직접 분석
+        user_analyze_btn = findViewById(R.id.text_analyze_btn);
+        user_analyze_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), TextAnalyzeActivity.class));
+            }
+        });
+
+        // 재분석 버튼
         reanalyze_btn = findViewById(R.id.reanalyze_btn);
         reanalyze_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
     }
@@ -53,8 +61,7 @@ public class AnalyzeFailActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (System.currentTimeMillis() > backKeyPressedTime + 2500) {
             backKeyPressedTime = System.currentTimeMillis();
-            toast = Toast.makeText(this, "한번 더 누르시면 종료됩니다.", Toast.LENGTH_LONG);
-            toast.show();
+            Toast.makeText(this, "한번 더 누르시면 종료됩니다.", Toast.LENGTH_LONG).show();
             return;
         }
         if (System.currentTimeMillis() <= backKeyPressedTime + 2500) {

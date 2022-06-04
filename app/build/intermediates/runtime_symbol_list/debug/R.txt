@@ -2676,6 +2676,7 @@ int drawable table2 0x7f07010f
 int drawable table_edit 0x7f070110
 int drawable test_custom_background 0x7f070111
 int drawable test_level_drawable 0x7f070112
+int drawable text_analyze_btn 0x7f070118
 int drawable title_left 0x7f070113
 int drawable title_right 0x7f070114
 int drawable tooltip_frame_dark 0x7f070115
@@ -2844,6 +2845,9 @@ int id clip_vertical 0x7f090091
 int id clockwise 0x7f090092
 int id closest 0x7f090093
 int id collapseActionView 0x7f090094
+int id color_input_box 0x7f090250
+int id color_spinner 0x7f090252
+int id color_text 0x7f090253
 int id compress 0x7f090095
 int id confirm_button 0x7f090096
 int id constraint 0x7f090097
@@ -3144,6 +3148,10 @@ int id selected 0x7f0901bd
 int id selection_type 0x7f0901be
 int id serial 0x7f0901bf
 int id serial_info 0x7f0901c0
+int id shape_input_box 0x7f090254
+int id shape_input_edit 0x7f090255
+int id shape_spinner 0x7f090256
+int id shape_text 0x7f090257
 int id sharedValueSet 0x7f0901c1
 int id sharedValueUnset 0x7f0901c2
 int id shortcut 0x7f0901c3
@@ -3237,9 +3245,16 @@ int id textSpacerNoButtons 0x7f09021a
 int id textSpacerNoTitle 0x7f09021b
 int id textStart 0x7f09021c
 int id textTop 0x7f09021d
+int id textView 0x7f09024f
+int id text_analyze_btn 0x7f090258
+int id text_analyze_title 0x7f090259
+int id text_input_box 0x7f09025a
+int id text_input_edit 0x7f09025b
 int id text_input_end_icon 0x7f09021e
 int id text_input_error_icon 0x7f09021f
 int id text_input_start_icon 0x7f090220
+int id text_submit_btn 0x7f09025d
+int id text_text 0x7f09025e
 int id textinput_counter 0x7f090221
 int id textinput_error 0x7f090222
 int id textinput_helper_text 0x7f090223
@@ -3375,6 +3390,7 @@ int layout abc_tooltip 0x7f0c001b
 int layout activity_analyze 0x7f0c001c
 int layout activity_analyze_fail 0x7f0c001d
 int layout activity_intro 0x7f0c001e
+int layout activity_loading 0x7f0c007e
 int layout activity_login_first 0x7f0c001f
 int layout activity_login_second 0x7f0c0020
 int layout activity_main 0x7f0c0021
@@ -3383,6 +3399,7 @@ int layout activity_signup_second 0x7f0c0023
 int layout activity_signup_third 0x7f0c0024
 int layout activity_substitution 0x7f0c0025
 int layout activity_substitution_fail 0x7f0c0026
+int layout activity_text_analyze 0x7f0c007f
 int layout custom_dialog 0x7f0c0027
 int layout design_bottom_navigation_item 0x7f0c0028
 int layout design_bottom_sheet_dialog 0x7f0c0029

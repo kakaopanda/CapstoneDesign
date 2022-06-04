@@ -1,7 +1,5 @@
 package com.example.capstonedesign;
 
-import static com.example.capstonedesign.LoginFirstActivity.serverUrl;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -26,8 +24,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginSecondActivity extends AppCompatActivity {
     // XML Object
-    private ImageView signup_btn, login_btn, another_btn;
+    public static String serverUrl = "http://1.249.71.81:8080/";
     public static String loginId, loginPw;
+    private ImageView signup_btn, login_btn, another_btn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,8 +41,7 @@ public class LoginSecondActivity extends AppCompatActivity {
         signup_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignupFirstActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), SignupFirstActivity.class));
             }
         });
 
@@ -61,8 +59,55 @@ public class LoginSecondActivity extends AppCompatActivity {
         another_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginFirstActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), LoginFirstActivity.class));
+            }
+        });
+    }
+
+    // 로그인 기능
+    private void login() {
+        EditText idText = (EditText)findViewById(R.id.id_input_edit);
+        EditText pwText = (EditText)findViewById(R.id.password_input_edit);
+        String id = idText.getText().toString();
+        String pw = pwText.getText().toString();
+        Gson gson = new GsonBuilder().setLenient().create();
+        Toast failedToast = Toast.makeText(getApplicationContext(), "이메일이나 비밀번호가 잘못되었습니다.", Toast.LENGTH_LONG);
+        Toast serverErrorToast = Toast.makeText(getApplicationContext(), "서버가 응답하지 않습니다.", Toast.LENGTH_LONG);
+
+        // 서버 통신을 위한 Retrofit 설정
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(serverUrl)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+        // Retrofit에 Login 정보를 담아서 서비스 생성
+        LoginService service = retrofit.create(LoginService.class);
+
+        // 서버 통신
+        Call<String> call = service.login(id,pw);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if(response.isSuccessful()) {
+                    String result = response.body();
+                    if(result.equals("SUCCESS")) {
+                        loginId = id;
+                        loginPw = pw;
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        Log.e("Login","onResponse: 성공, 결과: " + result);
+                    }
+                    else {
+                        failedToast.show();
+                    }
+                }
+                else {
+                    serverErrorToast.show();
+                    Log.e("Login", "onResponse: 실패");
+                }
+            }
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                serverErrorToast.show();
+                Log.e("Login", "onFailure " + t.getMessage());
             }
         });
     }
@@ -76,49 +121,5 @@ public class LoginSecondActivity extends AppCompatActivity {
     private void applyColors() {
         getWindow().setStatusBarColor(Color.parseColor("#FF1073B4"));
         getWindow().setNavigationBarColor(Color.parseColor("#FF1073B4"));
-    }
-
-    // 로그인 기능
-    private void login() {
-        EditText idText = (EditText)findViewById(R.id.id_input_edit);
-        EditText pwText = (EditText)findViewById(R.id.password_input_edit);
-        String id = idText.getText().toString();
-        String pw = pwText.getText().toString();
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        Gson gson = new GsonBuilder().setLenient().create();
-        Toast failedToast = Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_LONG);
-        Toast serverErrorToast = Toast.makeText(getApplicationContext(), "서버 오류", Toast.LENGTH_LONG);
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(serverUrl)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-        LoginService service = retrofit.create(LoginService.class);
-
-        Call<String> call = service.login(id,pw);
-        call.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                if(response.isSuccessful()) {
-                    String result = response.body();
-                    if(result.equals("SUCCESS")) {
-                        loginId = id;
-                        loginPw = pw;
-                        startActivity(intent);
-                        Log.e("Login","onResponse: 성공, 결과: "+result.toString());
-                    }
-                    else {failedToast.show();}
-                }
-                else {
-                    failedToast.show();
-                    Log.e("Login", "onResponse: 실패");
-                }
-            }
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                serverErrorToast.show();
-                Log.e("Login", "onFailure " + t.getMessage());
-            }
-        });
     }
 }

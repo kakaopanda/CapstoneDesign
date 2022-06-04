@@ -1,23 +1,13 @@
 package com.example.capstonedesign;
 
-import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
-import android.animation.TimeAnimator;
-import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -25,13 +15,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.common.SignInButton;
-import com.google.firebase.auth.FirebaseAuth;
-
 public class LoginFirstActivity extends AppCompatActivity{
     // JAVA Object
-    public static String serverUrl = "http://1.249.71.81:8080/";
     private Animation scaleAnim, rotateAnim;
     private Toast toast;
     private long backKeyPressedTime = 0;

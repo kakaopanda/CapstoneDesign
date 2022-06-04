@@ -2677,6 +2677,7 @@ drawable table2
 drawable table_edit
 drawable test_custom_background
 drawable test_level_drawable
+drawable text_analyze_btn
 drawable title_left
 drawable title_right
 drawable tooltip_frame_dark
@@ -2845,6 +2846,9 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id color_input_box
+id color_spinner
+id color_text
 id compress
 id confirm_button
 id constraint
@@ -3145,6 +3149,10 @@ id selected
 id selection_type
 id serial
 id serial_info
+id shape_input_box
+id shape_input_edit
+id shape_spinner
+id shape_text
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3238,9 +3246,16 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
+id text_analyze_btn
+id text_analyze_title
+id text_input_box
+id text_input_edit
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_submit_btn
+id text_text
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -3376,6 +3391,7 @@ layout abc_tooltip
 layout activity_analyze
 layout activity_analyze_fail
 layout activity_intro
+layout activity_loading
 layout activity_login_first
 layout activity_login_second
 layout activity_main
@@ -3384,6 +3400,7 @@ layout activity_signup_second
 layout activity_signup_third
 layout activity_substitution
 layout activity_substitution_fail
+layout activity_text_analyze
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

@@ -2,11 +2,19 @@ package com.example.capstonedesign;
 
 import static android.widget.Toast.makeText;
 
+import static com.example.capstonedesign.LoadingActivity.pillBitmap;
+import static com.example.capstonedesign.LoadingActivity.pillModel;
+import static com.example.capstonedesign.TextAnalyzeActivity.textPillBitmap;
+import static com.example.capstonedesign.TextAnalyzeActivity.textPillModel;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.telecom.Call;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -23,6 +31,14 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class AnalyzeActivity extends AppCompatActivity {
     // JAVA Object
@@ -33,10 +49,10 @@ public class AnalyzeActivity extends AppCompatActivity {
     private boolean status = false;
 
     // XML Object
-    private ImageView subtitute_btn, capture_btn, medicine_background1, medicine_background2, size_btn, analyze_result_box;
+    private ImageView subtitute_btn, capture_btn, medicine_front, medicine_background1, medicine_background2, size_btn, analyze_result_box;
     private TextView name, serial, division, appearance, pharmacist, classification, ingredient;
     private TextView serial_info, division_info, appearance_info, pharmacist_info, classification_info, ingredient_info;
-    private String appearance_content, pharmacist_content, classification_content, ingredient_content;
+    private String appearance_content, pharmacist_content, classification_content, ingredient_content, name_content, serial_content;
     private String shape_content, path_content, unit_content, daily_content;
 
     @Override
@@ -49,7 +65,6 @@ public class AnalyzeActivity extends AppCompatActivity {
 
         subtitute_btn = findViewById(R.id.subtitute_btn);
         subtitute_btn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SubstituteActivity.class);
@@ -64,6 +79,8 @@ public class AnalyzeActivity extends AppCompatActivity {
                 ScreenShot();
             }
         });
+
+        medicine_front = findViewById((R.id.medicine_front));
 
         medicine_background1 = findViewById(R.id.medicine_background1);
         scaleAnim = AnimationUtils.loadAnimation(this, R.anim.scale);
@@ -93,7 +110,6 @@ public class AnalyzeActivity extends AppCompatActivity {
 
         size_btn = findViewById(R.id.size_btn);
         size_btn.setOnClickListener(new View.OnClickListener() {
-
             int textSize = 11;
             @Override
             public void onClick(View view) {
@@ -122,6 +138,27 @@ public class AnalyzeActivity extends AppCompatActivity {
                 makeText(getApplicationContext(), "글자 크기를 "+textPhase+"단계로 변경합니다.",Toast.LENGTH_SHORT).show();
             }
         });
+
+        // 이미지로 분석한 경우
+        if (pillModel != null) {
+            name.setText(pillModel.pill_name);
+            serial_info.setText(pillModel.pill_serial);
+            appearance_info.setText(pillModel.appearance);
+            classification_info.setText(pillModel.classify);
+            pharmacist_info.setText(pillModel.business_name);
+            division_info.setText(pillModel.is_prescription);
+            medicine_front.setImageBitmap(pillBitmap);
+        }
+        // 유저가 텍스트로 직접 입력하여 분석한 경우
+        else {
+            name.setText(textPillModel.pill_name);
+            serial_info.setText(textPillModel.pill_serial);
+            appearance_info.setText(textPillModel.appearance);
+            classification_info.setText(textPillModel.classify);
+            pharmacist_info.setText(textPillModel.business_name);
+            division_info.setText(textPillModel.is_prescription);
+            medicine_front.setImageBitmap(textPillBitmap);
+        }
 
         rotateAnim = AnimationUtils.loadAnimation(this, R.anim.rotate2);
         size_btn.setAnimation(rotateAnim);
@@ -163,7 +200,6 @@ public class AnalyzeActivity extends AppCompatActivity {
                     classification_info.setText(classification_content);
                     ingredient.setText("주  성  분");
                     ingredient_info.setText(ingredient_content);
-
                     status = false;
                 }
             }

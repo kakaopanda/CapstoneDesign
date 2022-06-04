@@ -1,15 +1,12 @@
 package com.example.capstonedesign;
 
-import static com.example.capstonedesign.LoginFirstActivity.serverUrl;
 import static com.example.capstonedesign.LoginSecondActivity.loginId;
 
-import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.ImageDecoder;
 import android.net.Uri;
@@ -21,7 +18,6 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,30 +28,17 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.FileProvider;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 public class MainActivity extends AppCompatActivity {
     // JAVA Object
+    public static String filePath;
     private final int REQUEST_TAKE_PHOTO = 1;
     private final String TAG = this.getClass().getSimpleName();
 
@@ -76,15 +59,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 이미지 제출 버튼
         upload_btn = findViewById(R.id.upload_btn);
         upload_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AnalyzeActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), LoadingActivity.class));
             }
         });
 
+        // 이미지 업로드 버튼
         analyze_target = findViewById(R.id.analyze_target);
         analyze_target.setOnClickListener(v -> {
             // 촬영시 주의사항을 담은 Toast Message 출력
@@ -97,18 +81,10 @@ public class MainActivity extends AppCompatActivity {
             gallery_launcher.launch(intent);
         });
 
+        // 이미지 촬영 버튼
         camera_btn = findViewById(R.id.camera_btn);
         camera_btn.setOnClickListener(v -> {
             dispatchTakePictureIntent();
-        });
-
-        quantity = findViewById(R.id.quantity);
-        quantity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AnalyzeFailActivity.class);
-                startActivity(intent);
-            }
         });
     }
 
@@ -233,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
                             analyze_target.setImageBitmap(bitmap);
                         }
                     }
+                    filePath = mCurrentPhotoPath;
                 }
             });
 
@@ -253,70 +230,10 @@ public class MainActivity extends AppCompatActivity {
                         analyze_target.setImageURI(uri);
                         Log.e(TAG, "PATH: " + getFullPathFromContentUri(getApplicationContext(), uri));
                         String path = getFullPathFromContentUri(getApplicationContext(), uri);
-                        uploadImage(path);
-                        saveImage(loginId, path);
+                        filePath = path;
                     }
                 }
             });
-
-    // 경로로 주어진 이미지 서버로 전송
-    private void uploadImage(String path) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(serverUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        File file = new File(path);
-        ImgUploadService service = retrofit.create(ImgUploadService.class);
-
-        RequestBody requestFile = RequestBody.create(MediaType.parse("jpg"), file);
-        MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
-
-        String descriptionString = "hello, this is description speaking";
-        RequestBody description = RequestBody.create(okhttp3.MultipartBody.FORM, descriptionString);
-
-        Call<ResponseBody> call = service.upload(description, body);
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Log.d("Upload", "success");
-            }
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Log.d("Upload error:", t.getMessage());
-            }
-        });
-    }
-
-    // 이미지 정보 데이터베이스 저장
-    private void saveImage(String id, String path) {
-        Gson gson = new GsonBuilder().setLenient().create();
-        String filename = new File(path).getName();
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(serverUrl)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-        ImgInfoService service = retrofit.create(ImgInfoService.class);
-
-        Call<String> call = service.upload(id, filename);
-        call.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                if(response.isSuccessful()) {
-                    String result = response.body();
-                    Log.e("Image","onResponse: 성공, 결과: "+result.toString());
-                }
-                else {
-                    Log.e("Image", "onResponse: 실패" );
-                }
-            }
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Log.e("Image", "onFailure " + t.getMessage());
-            }
-        });
-    }
 
     // URI에서 파일 절대경로 추출
     public static String getFullPathFromContentUri(final Context context, final Uri uri) {
@@ -414,9 +331,7 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
-    private static String getDataColumn(Context context, Uri uri, String selection,
-                                        String[] selectionArgs) {
-
+    private static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
         Cursor cursor = null;
         final String column = "_data";
         final String[] projection = {
