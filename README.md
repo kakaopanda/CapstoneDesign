@@ -60,5 +60,4 @@
 
 |시스템 목표 성능 통계 (단위 : 초)|
 |:---|
-|![Accuracy(2)](https://user-images.githubusercontent.com/63866366/174475378-49bf4d3e-0d40-48c8-8be9-3a0148b3ad26.png)
-|
+|![Accuracy(2)](https://user-images.githubusercontent.com/63866366/174475378-49bf4d3e-0d40-48c8-8be9-3a0148b3ad26.png)|
