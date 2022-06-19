@@ -24,3 +24,15 @@
 |사용자 인터페이스(UI, User Interface)(2)|
 |:---|
 |![User Interface(2)](https://user-images.githubusercontent.com/63866366/174473950-1156880d-5d3a-4c79-a3dd-9c614deded28.png)|
+
+#### #4. 애플리케이션 사용 방법 및 기능
+|애플리케이션 사용 방법 및 기능(1)|
+|:---|
+|![User Interface(3)](https://user-images.githubusercontent.com/63866366/174474364-69f7934c-a467-414a-814f-650c47101ee6.png)| 
+
+<br>
+
+|애플리케이션 사용 방법 및 기능(2)|
+|:---|
+|![User Interface(4](https://user-images.githubusercontent.com/63866366/174474419-b53a9752-0209-428a-b35b-b86b22dbc442.png)|
+
